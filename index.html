@@ -30,8 +30,8 @@
     "description": "伝統的な鍛金技法とデジタル表現を融合し、新しい価値創造を探求するゲームアートプロジェクト。 / A game art project fusing traditional Japanese metal hammering with digital play.",
     "creator": [
       { "@type": "Person", "name": "KamiEna", "alternateName": "カミエナ" },
-      { "@type": "Person", "name": "Ryosuke Shiomi", "alternateName": "塩見亮介" },
-      { "@type": "Person", "name": "Takeru Kaneko", "alternateName": "金子尊" }
+      { "@type": "Person", "name": "Shiomi Ryosuke", "alternateName": "塩見亮介" },
+      { "@type": "Person", "name": "Kaneko Takeru", "alternateName": "金子尊" }
     ],
     "hasPart": [
       { "@type": "VisualArtwork", "name": "Yuki", "alternateName": "01 Yuki", "url": "works/yuki.html" },
@@ -120,23 +120,6 @@
         </div>
       </div>
 
-      <div class="cards cards--3 reveal" style="margin-top: clamp(48px, 7vw, 88px)">
-        <div class="card">
-          <span class="card__label">Craft × Game</span>
-          <h3><span lang="ja">工芸 × ゲーム</span><span lang="en">Craft × Game</span></h3>
-          <p><span lang="ja">異なる2つの領域を、ひとつの作品として組み合わせる。</span><span lang="en">Two separate disciplines, joined as a single work.</span></p>
-        </div>
-        <div class="card">
-          <span class="card__label">Tankin × Digital</span>
-          <h3><span lang="ja">鍛金 × デジタル</span><span lang="en">Hammered metal × Digital</span></h3>
-          <p><span lang="ja">伝統的な金属加工技法と、インタラクティブな表現を融合する。</span><span lang="en">Traditional metalworking fused with interactive expression.</span></p>
-        </div>
-        <div class="card">
-          <span class="card__label">New value</span>
-          <h3><span lang="ja">新しい価値創造</span><span lang="en">Creating new value</span></h3>
-          <p><span lang="ja">既存の枠組みを超えた、作品のあり方を探求する。</span><span lang="en">Searching for what an artwork can be, beyond existing categories.</span></p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -194,7 +177,12 @@
         </div>
         <div class="reveal">
           <svg class="posmap" viewBox="0 0 440 400" role="img" aria-labelledby="posmap-t">
-            <title id="posmap-t">Positioning map: games, contemporary art, industrial products and crafts</title>
+            <title id="posmap-t">Positioning map: moving right from games (adding the exclusivity of craft) and up from crafts (adding the conceptuality of games) meet in contemporary art, where CÔGEIMU sits.</title>
+            <defs>
+              <marker id="pm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--copper)"/>
+              </marker>
+            </defs>
             <line x1="20" y1="200" x2="420" y2="200" stroke="rgba(255,255,255,.18)"/>
             <line x1="220" y1="30" x2="220" y2="370" stroke="rgba(255,255,255,.18)"/>
             <text x="220" y="20" text-anchor="middle"><tspan lang="ja">コンセプチュアル</tspan><tspan lang="en">CONCEPTUAL</tspan></text>
@@ -202,20 +190,25 @@
             <text x="24" y="190"><tspan lang="ja">大衆的</tspan><tspan lang="en">MASS</tspan></text>
             <text x="416" y="190" text-anchor="end"><tspan lang="ja">限定的</tspan><tspan lang="en">EXCLUSIVE</tspan></text>
 
-            <circle cx="110" cy="110" r="46" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)"/>
-            <text class="q" x="110" y="115" text-anchor="middle"><tspan lang="ja">ゲーム</tspan><tspan lang="en">Games</tspan></text>
-            <circle cx="330" cy="290" r="46" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)"/>
-            <text class="q" x="330" y="295" text-anchor="middle"><tspan lang="ja">工芸</tspan><tspan lang="en">Crafts</tspan></text>
             <circle cx="110" cy="290" r="40" fill="none" stroke="rgba(255,255,255,.08)"/>
             <text class="q" x="110" y="295" text-anchor="middle" style="fill: var(--muted)"><tspan lang="ja">工業製品</tspan><tspan lang="en">Products</tspan></text>
-            <circle cx="330" cy="110" r="40" fill="none" stroke="rgba(255,255,255,.08)"/>
-            <text class="q" x="330" y="160" text-anchor="middle" style="fill: var(--muted); font-size: 13px"><tspan lang="ja">現代アート</tspan><tspan lang="en">Contemporary Art</tspan></text>
 
-            <path d="M156 110 C 230 110, 270 100, 312 96" stroke="var(--copper)" stroke-dasharray="3 5" fill="none"/>
-            <path d="M330 244 C 330 190, 330 150, 330 128" stroke="var(--copper)" stroke-dasharray="3 5" fill="none"/>
-            <circle cx="330" cy="96" r="7" fill="var(--copper)"/>
-            <circle cx="330" cy="96" r="16" fill="none" stroke="var(--copper)" opacity=".4"/>
-            <text class="brand" x="330" y="66" text-anchor="middle">CÔGEIMU</text>
+            <circle cx="110" cy="110" r="46" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
+            <text class="q" x="110" y="115" text-anchor="middle"><tspan lang="ja">ゲーム</tspan><tspan lang="en">Games</tspan></text>
+            <circle cx="330" cy="290" r="46" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
+            <text class="q" x="330" y="295" text-anchor="middle"><tspan lang="ja">工芸</tspan><tspan lang="en">Crafts</tspan></text>
+
+            <circle cx="330" cy="110" r="46" fill="rgba(200,132,91,.08)" stroke="rgba(200,132,91,.5)"/>
+            <line x1="158" y1="110" x2="281" y2="110" stroke="var(--copper)" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+            <line x1="330" y1="243" x2="330" y2="159" stroke="var(--copper)" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+            <text class="pm-note" x="220" y="98" text-anchor="middle"><tspan lang="ja">＋工芸の限定性</tspan><tspan lang="en">+ exclusivity of craft</tspan></text>
+            <text class="pm-note" x="321" y="228" text-anchor="end"><tspan lang="ja">＋ゲームの</tspan><tspan lang="en">+ conceptuality</tspan></text>
+            <text class="pm-note" x="321" y="244" text-anchor="end"><tspan lang="ja">コンセプチュアルさ</tspan><tspan lang="en">of games</tspan></text>
+
+            <circle cx="330" cy="104" r="7" fill="var(--copper)"/>
+            <circle cx="330" cy="104" r="15" fill="none" stroke="var(--copper)" opacity=".45"/>
+            <text class="q" x="330" y="138" text-anchor="middle" style="font-size: 13px; fill: var(--text-2)"><tspan lang="ja">現代アート</tspan><tspan lang="en">Contemporary Art</tspan></text>
+            <text class="brand" x="330" y="50" text-anchor="middle">CÔGEIMU</text>
           </svg>
         </div>
       </div>
@@ -228,21 +221,16 @@
       <header class="sec-head reveal">
         <p class="sec-head__label">Works</p>
         <h2><span lang="ja">作品</span><span lang="en">Works</span></h2>
-        <p>
-          <span lang="ja">CÔGEIMU では、異なる金属で作られた2体の少女の像を制作しています。</span>
-          <span lang="en">CÔGEIMU is creating two girls, each hammered from a different metal.</span>
-        </p>
       </header>
 
       <div class="works">
-        <!-- data-eye：カードをクリックしたときにズームインする目の位置（画像に対する % ） -->
-        <a class="work work--yuki reveal" href="works/yuki.html" data-eye="40.5 33" data-eye-inside="assets/img/yuki/ingame-02.webp" data-eye-color="#e9e8ee">
+        <a class="work work--yuki reveal" href="works/yuki.html">
           <img src="assets/img/yuki/card.webp" width="702" height="878" loading="lazy" alt="アルミニウムの鍛金で作られた少女の像 Yuki" data-alt-ja="アルミニウムの鍛金で作られた少女の像 Yuki" data-alt-en="Yuki, a girl hammered from aluminium">
           <span class="work__no">01</span>
           <span class="work__mat">Aluminium</span>
           <div class="work__body">
             <p class="work__code">Yuki</p>
-            <p class="work__title">Prototype</p>
+            <p class="work__title">No Title <small>(Prototype)</small></p>
             <p class="work__desc">
               <span lang="ja">銀色の少女・ユキ。瞳の奥に広がる「ココロノセカイ」で、少女の分身を探す“かくれんぼ”のゲームアート。CÔGEIMU の原点となった最初の作品。</span>
               <span lang="en">Yuki, the silver girl. Search for copies of her hidden in the “World of the Heart” behind her eyes — a game of hide-and-seek, and the first work of CÔGEIMU.</span>
@@ -255,7 +243,7 @@
           </div>
         </a>
 
-        <a class="work work--kagane reveal" href="works/kagane.html" data-eye="30 45" data-eye-inside="assets/img/kagane/ingame-cave-copper.webp" data-eye-color="#1b2a26">
+        <a class="work work--kagane reveal" href="works/kagane.html">
           <img src="assets/img/kagane/card.webp" width="960" height="1200" loading="lazy" alt="銅の鍛金で作られた少女の像 Kagane" data-alt-ja="銅の鍛金で作られた少女の像 Kagane" data-alt-en="Kagane, a girl hammered from copper">
           <span class="work__no">02</span>
           <span class="work__mat">Copper</span>
@@ -285,55 +273,115 @@
         <h2><span lang="ja">活動実績</span><span lang="en">Exhibitions &amp; Press</span></h2>
       </header>
 
+      <p class="eyebrow reveal" style="margin-bottom: 14px">Exhibitions</p>
+      <ul class="timeline timeline--wide reveal">
+        <!-- 公開前：Anima Ludens（フランス・アルル）への出展。発表後にコメントを外して公開する
+        <li>
+          <time datetime="2026-10-10">2026.10.10 – 11.08</time>
+          <div>
+            <h4><span lang="ja">Anima Ludens アニマ・ルーデンス</span><span lang="en">Anima Ludens</span></h4>
+            <p><span lang="ja">Festival Octobre Numérique 2026 メインプログラム／トリニテ修道院礼拝堂（フランス・アルル）。02 Kagane「ARE YOU THERE?」世界初公開。</span><span lang="en">Main programme of Festival Octobre Numérique 2026 / Chapelle des Trinitaires, Arles, France. World premiere of 02 Kagane “ARE YOU THERE?”.</span></p>
+          </div>
+        </li>
+        -->
+        <li>
+          <time datetime="2026-05-16">2026.05.16 – 07.12</time>
+          <div>
+            <h4><span lang="ja">art bit #6：ゲーム・プレイング・ソサエティ</span><span lang="en">art bit #6: Game Playing Society</span></h4>
+            <p><span lang="ja">ホテル アンテルーム 京都 GALLERY 9.5（京都）</span><span lang="en">GALLERY 9.5, Hotel Anteroom Kyoto</span></p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-02-11">2026.02.11 – 02.14</time>
+          <div>
+            <h4><span lang="ja">これはゲームなのか？展3</span><span lang="en">“Is This a Game?” Exhibition 3</span></h4>
+            <p><span lang="ja">404 Not Found（渋谷サクラステージ 4F）</span><span lang="en">404 Not Found, Shibuya Sakura Stage 4F</span></p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-02-06">2026.02.06 – 02.15</time>
+          <div>
+            <h4>SHIBUYA GAMES WEEK 2026</h4>
+            <p><span lang="ja">404ゲームセンター（渋谷サクラステージ 4F）</span><span lang="en">404 Game Center, Shibuya Sakura Stage 4F</span></p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2025-11-15">2025.11.15</time>
+          <div>
+            <h4><span lang="ja">プロトタイプ発表展示会＆ゲームアートトーク</span><span lang="en">Prototype Premiere &amp; Game Art Talk</span></h4>
+            <p><span lang="ja">404 Not Found（渋谷サクラステージ 4F）</span><span lang="en">404 Not Found, Shibuya Sakura Stage 4F</span></p>
+          </div>
+        </li>
+      </ul>
+      <p class="record-note reveal">
+        <span lang="ja">これまでの展示はすべて 01 Yuki（プロトタイプ）によるものです。詳細は <a href="works/yuki.html#exhibitions">Yuki のページ</a> へ。</span>
+        <span lang="en">All exhibitions so far featured 01 Yuki (prototype). See <a href="works/yuki.html#exhibitions">Yuki’s page</a> for details.</span>
+      </p>
 
-      <div class="split">
-        <div class="reveal">
-          <p class="eyebrow" style="margin-bottom: 14px">Exhibitions</p>
-          <ul class="timeline">
-            <li>
-              <time datetime="2025-11-15">2025.11.15</time>
-              <div>
-                <h4><span lang="ja">プロトタイプ発表展示会＆ゲームアートトーク</span><span lang="en">Prototype Premiere &amp; Game Art Talk</span></h4>
-                <p><span lang="ja">404 Not Found（渋谷サクラステージ 4F）</span><span lang="en">404 Not Found, Shibuya Sakura Stage 4F</span></p>
-              </div>
-            </li>
-            <li>
-              <time datetime="2026-02">2026.02</time>
-              <div>
-                <h4>SHIBUYA GAMES WEEK 2026</h4>
-                <p><span lang="ja">渋谷</span><span lang="en">Shibuya, Tokyo</span></p>
-              </div>
-            </li>
-            <li>
-              <time datetime="2026-05-16">2026.05.16 – 07.12</time>
-              <div>
-                <h4><span lang="ja">art bit #6：ゲーム・プレイング・ソサエティ</span><span lang="en">art bit #6: Game Playing Society</span></h4>
-                <p><span lang="ja">ホテルアンテルーム京都 GALLERY 9.5</span><span lang="en">GALLERY 9.5, Hotel Anteroom Kyoto</span></p>
-              </div>
-            </li>
-          </ul>
-          <p class="record-note">
-            <span lang="ja">これまでの展示はすべて 01 Yuki（プロトタイプ）によるものです。詳細は <a href="works/yuki.html#exhibitions">Yuki のページ</a> へ。</span>
-            <span lang="en">All exhibitions so far featured 01 Yuki (prototype). See <a href="works/yuki.html#exhibitions">Yuki’s page</a> for details.</span>
-          </p>
+      <div class="media reveal" id="media">
+        <p class="eyebrow" style="margin-bottom: 18px">Media</p>
+
+        <div class="media-featured">
+          <a class="media-card media-card--tv" href="https://www.instagram.com/p/DUiBeMtE4yW/" target="_blank" rel="noopener">
+            <span class="media-card__badge"><span lang="ja">テレビ（地上波）</span><span lang="en">Television</span></span>
+            <span class="media-card__outlet">NHK</span>
+            <span class="media-card__title"><span lang="ja">「首都圏ネットワーク」おでかけしゅと犬くん</span><span lang="en">“Shutoken Network” — Odekake Shutoken-kun</span></span>
+            <span class="media-card__note"><span lang="ja">SHIBUYA GAMES WEEK 2026 での展示を取材（2026.02 放送）<br>リンク先：NHK首都圏 公式 Instagram</span><span lang="en">Covered our exhibit at SHIBUYA GAMES WEEK 2026 (aired Feb 2026)<br>Link: NHK Shutoken official Instagram</span></span>
+          </a>
+          <a class="media-card" href="https://www.famitsu.com/article/202602/65777" target="_blank" rel="noopener">
+            <span class="media-card__badge"><span lang="ja">ゲームメディア</span><span lang="en">Game media</span></span>
+            <span class="media-card__outlet"><span lang="ja">ファミ通</span><span lang="en">Famitsu</span></span>
+            <span class="media-card__title">“これはゲームなのか？展3”が開催。いままでにない感情を思わず揺さぶられる!? ゲームの可能性は無限大であることがわかる!?</span>
+            <span class="media-card__note">2026.02.12</span>
+          </a>
+          <a class="media-card" href="https://bijutsutecho.com/magazine/news/exhibition/31681" target="_blank" rel="noopener">
+            <span class="media-card__badge"><span lang="ja">アートメディア</span><span lang="en">Art media</span></span>
+            <span class="media-card__outlet"><span lang="ja">美術手帖</span><span lang="en">Bijutsu Techo</span></span>
+            <span class="media-card__title">ars●bitによるプロジェクト「CÔGEIMU」が始動。ゲームと彫刻を組み合わせた新たな体験を創出</span>
+            <span class="media-card__note">2025.11.14</span>
+          </a>
         </div>
-        <div class="reveal">
-          <p class="eyebrow" style="margin-bottom: 14px">Press</p>
-          <ul class="press">
+
+        <p class="media__sub"><span lang="ja">動画</span><span lang="en">Video</span></p>
+        <div class="video-grid">
+          <a class="video-card" href="https://www.youtube.com/shorts/7dTBWBnEeTs" target="_blank" rel="noopener">
+            <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/7dTBWBnEeTs/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""></span>
+            <span class="press__meta">YouTube — INDIE Live Expo</span>
+            <span class="video-card__title">女の子の“瞳”をのぞきながら遊ぶゲーム「CÔGEIMU」【SHIBUYA GAMES WEEK 2026】</span>
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=ZHC6UMo4JMk" target="_blank" rel="noopener">
+            <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/ZHC6UMo4JMk/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""></span>
+            <span class="press__meta">YouTube — INDIE Live Expo</span>
+            <span class="video-card__title">渋谷がゲーセン化！？【SHIBUYA GAMES WEEK 2026】潜入取材</span>
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=UcVTLkcjTUw" target="_blank" rel="noopener">
+            <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/UcVTLkcjTUw/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""></span>
+            <span class="press__meta">YouTube — フェイチャンネル</span>
+            <span class="video-card__title">【Vlog】都市型ゲームフェス「SHIBUYA GAMES WEEK 2026」内覧会に行って来た！</span>
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=T1F3mRSm-zQ" target="_blank" rel="noopener">
+            <span class="video-card__thumb"><img src="https://i.ytimg.com/vi/T1F3mRSm-zQ/hqdefault.jpg" width="480" height="360" loading="lazy" alt=""></span>
+            <span class="press__meta">YouTube — プテラたかはし</span>
+            <span class="video-card__title">高田村メンバーで渋谷のゲームイベントで遊んでみた！【SHIBUYA GAMES WEEK】</span>
+          </a>
+        </div>
+
+        <p class="media__sub"><span lang="ja">記事</span><span lang="en">Articles</span></p>
+        <ul class="press">
+            <!-- 公開前：Anima Ludens 関連記事。発表後にコメントを外して公開する
+            <li><a href="https://news.denfaminicogamer.jp/news/2609163b" target="_blank" rel="noopener"><span class="press__meta">2026.09.16 — <span lang="ja">電ファミニコゲーマー</span><span lang="en">Den-Fami Nico Gamer</span></span><span class="press__title">『8番出口』がフランスの芸術祭に出展へ。歴史あるトリニテ修道院礼拝堂に日本のインディーゲームや現代アートが集結</span></a></li>
+            -->
+            <li><a href="https://www.gamescenes.org/event-4/" target="_blank" rel="noopener"><span class="press__meta">2026.05.11 — Game Scenes</span><span class="press__title">EVENT: ART BIT #6 BRINGS PLAYABLE INDIE GAMES AND GAME ART TO HOTEL ANTEROOM KYOTO</span></a></li>
             <li><a href="https://news.denfaminicogamer.jp/news/2605112h" target="_blank" rel="noopener"><span class="press__meta">2026.05.11 — <span lang="ja">電ファミニコゲーマー</span><span lang="en">Den-Fami Nico Gamer</span></span><span class="press__title">『コーヒートーク』『HUMANITY』など遊べる現代アート×インディーゲーム展覧会「art bit #6」が開催</span></a></li>
+            <li><a href="https://bijutsutecho.com/exhibitions/18196" target="_blank" rel="noopener"><span class="press__meta"><span lang="ja">美術手帖（展覧会情報）</span><span lang="en">Bijutsu Techo (exhibition listing)</span></span><span class="press__title">art bit #6：ゲーム・プレイング・ソサエティ</span></a></li>
             <li><a href="https://www.4gamer.net/games/991/G999110/20260206031/" target="_blank" rel="noopener"><span class="press__meta">2026.02.07 — 4Gamer.net</span><span class="press__title">渋谷に行くなら，ふらりとゲームも楽しもう。都市型ゲームフェス「SHIBUYA GAMES WEEK」で遊べるインディーゲームまとめ</span></a></li>
             <li><a href="https://news.yahoo.co.jp/expert/articles/462e39e3aeae041c6d96e8cfef97c62e79add002" target="_blank" rel="noopener"><span class="press__meta">2026.02.06 — <span lang="ja">Yahoo!ニュース エキスパート</span><span lang="en">Yahoo! News Expert</span></span><span class="press__title">渋谷の街をゲームがジャック！「SHIBUYA GAMES WEEK 2026」が本日開幕</span></a></li>
-            <li><a href="https://bijutsutecho.com/magazine/news/exhibition/31681" target="_blank" rel="noopener"><span class="press__meta">2025.11.14 — <span lang="ja">美術手帖</span><span lang="en">Bijutsu Techo</span></span><span class="press__title">ars●bitによるプロジェクト「CÔGEIMU」が始動。ゲームと彫刻を組み合わせた新たな体験を創出</span></a></li>
+            <li><a href="https://adv.tokyo-np.co.jp/prtimes/article111912/" target="_blank" rel="noopener"><span class="press__meta"><span lang="ja">東京新聞デジタル（PR TIMES）</span><span lang="en">Tokyo Shimbun Digital (PR TIMES)</span></span><span class="press__title">渋谷の街を舞台に展開する都市型ゲームフェス「SHIBUYA GAMES WEEK 2026」開催決定！</span></a></li>
             <li><a href="https://news.denfaminicogamer.jp/news/2511062q" target="_blank" rel="noopener"><span class="press__meta">2025.11.06 — <span lang="ja">電ファミニコゲーマー</span><span lang="en">Den-Fami Nico Gamer</span></span><span class="press__title">「彫刻の瞳を覗き込んでゲームを遊ぶ」──鍛金家とゲーム開発者が野心的すぎる意欲作。参加無料のプロトタイプ展示会が開催へ</span></a></li>
             <li><a href="https://www.4gamer.net/games/991/G999110/20251104049/" target="_blank" rel="noopener"><span class="press__meta">2025.11.04 — 4Gamer.net</span><span class="press__title">ゲームアートプロジェクト「CÔGEIMU（コーゲイム）」プロトタイプ発表展示会，11月15日に開催</span></a></li>
             <li><a href="https://www.igda.jp/2025/11/04/15952/" target="_blank" rel="noopener"><span class="press__meta">2025.11.04 — <span lang="ja">IGDA日本</span><span lang="en">IGDA Japan</span></span><span class="press__title">ゲームと彫刻を組み合わせた新体験「CÔGEIMU」プロトタイプ発表展示会＆トークセッションを無料開催</span></a></li>
-          </ul>
-          <!-- TODO(press): 記事URLが確認できたら上の一覧にリンク付きで移す -->
-          <p class="press__others">
-            <span lang="ja">ほか、NHK ONE「おでかけしゅと犬くん」（地上波取材）、ファミ通、東京新聞、ゲームメーカーズ、INDIE Live Expo などで紹介</span>
-            <span lang="en">Also featured on NHK ONE “Odekake Shutoken-kun” (TV), Famitsu, Tokyo Shimbun, Game Makers, INDIE Live Expo and more</span>
-          </p>
-        </div>
+            <li><a href="https://www.404shibuya.tokyo/event/https-arsobit-gameart-ex01/" target="_blank" rel="noopener"><span class="press__meta">2025.10.16 — 404 Not Found</span><span class="press__title">【ars●bit】GameArt プロジェクト「CÔGEIMU」プロトタイプ発表展示会＆ゲームアートトーク</span></a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -361,45 +409,45 @@
             <span lang="en">An indie game creator who sees “delivering” a work as part of making it. Leads direction and production in team projects while also covering planning, scenario, programming and visuals. Known for playful, <i>kawaii</i> works anyone can enjoy.</span>
           </p>
           <dl>
-            <dt>Role</dt>
+            <dt><span lang="ja">役割</span><span lang="en">Role</span></dt>
             <dd><span lang="ja">企画・ディレクション・プロデュース</span><span lang="en">Concept, direction and production</span></dd>
-            <dt>Award</dt>
+            <dt><span lang="ja">受賞</span><span lang="en">Award</span></dt>
             <dd>NEW VIEW AWARD — Site-specific AR, GOLD PRIZE</dd>
-            <dt>Media</dt>
+            <dt><span lang="ja">メディア出演</span><span lang="en">Media</span></dt>
             <dd><span lang="ja">BSフジ「界隈ほーる〜偏愛の穴に落ちてみた〜」／NHK ONE「おでかけしゅと犬くん」／INDIE Live Expo ほか</span><span lang="en">BS Fuji, NHK ONE, INDIE Live Expo and more</span></dd>
           </dl>
         </article>
 
         <article class="member reveal">
-          <div class="member__photo"><img src="assets/img/team/shiomi.webp" width="450" height="450" loading="lazy" alt="塩見亮介" data-alt-ja="塩見亮介" data-alt-en="Ryosuke Shiomi"></div>
+          <div class="member__photo"><img src="assets/img/team/shiomi.webp" width="450" height="450" loading="lazy" alt="塩見亮介" data-alt-ja="塩見亮介" data-alt-en="Shiomi Ryosuke"></div>
           <p class="member__role">Metal Artist</p>
           <h3>塩見亮介</h3>
-          <p class="member__en">Ryosuke Shiomi</p>
+          <p class="member__en">Shiomi Ryosuke</p>
           <p>
             <span lang="ja">日本伝統の鍛金・彫金技法を用い、誇りや祈りをテーマに主に甲冑様式の作品を制作。銀・銅・真鍮・鉄など様々な素材を扱う。1989年生まれ。東京藝術大学大学院美術研究科修士課程 工芸専攻鍛金 修了。</span>
             <span lang="en">Creates mainly armour-style works on the themes of pride and prayer, using traditional Japanese hammering (<i>tankin</i>) and chasing (<i>chōkin</i>) in silver, copper, brass, iron and more. Born 1989; M.F.A. in metal hammering, Tokyo University of the Arts.</span>
           </p>
           <dl>
-            <dt>Role</dt>
+            <dt><span lang="ja">役割</span><span lang="en">Role</span></dt>
             <dd><span lang="ja">鍛金による外装の設計・制作</span><span lang="en">Design and hammering of the sculptures</span></dd>
-            <dt>Exhibitions</dt>
+            <dt><span lang="ja">主な展覧会</span><span lang="en">Exhibitions</span></dt>
             <dd><span lang="ja">「素材転生 - Beyond the Material」岐阜県美術館（2021）／BIWAKO BIENNALE（2022）／日曜美術館「現代の超絶技巧 2」（2023）ほか</span><span lang="en">“Beyond the Material”, Museum of Fine Arts, Gifu (2021) / BIWAKO BIENNALE (2022) / NHK “Nichiyo Bijutsukan” (2023) and more</span></dd>
           </dl>
         </article>
 
         <article class="member reveal">
-          <div class="member__photo"><img src="assets/img/team/kaneko.webp" width="450" height="450" loading="lazy" alt="金子尊" data-alt-ja="金子尊" data-alt-en="Takeru Kaneko"></div>
+          <div class="member__photo"><img src="assets/img/team/kaneko.webp" width="450" height="450" loading="lazy" alt="金子尊" data-alt-ja="金子尊" data-alt-en="Kaneko Takeru"></div>
           <p class="member__role">Engineer / Technical Artist</p>
           <h3>金子尊</h3>
-          <p class="member__en">Takeru Kaneko</p>
+          <p class="member__en">Kaneko Takeru</p>
           <p>
             <span lang="ja">“日本文化の1ページ”を創ることを目標に活動するアート・ゲームクリエイター。ゲーム・日本美術・アニメに救われた経験からクリエイターを志し、独学でプログラミング・3DCG を習得。現在は都内のアートコレクティブでアート制作に携わる。</span>
             <span lang="en">An art and game creator aiming to write “a page of Japanese culture”. Having been saved by games, Japanese art and anime, he taught himself programming and 3DCG and now creates art with a Tokyo-based art collective.</span>
           </p>
           <dl>
-            <dt>Role</dt>
+            <dt><span lang="ja">役割</span><span lang="en">Role</span></dt>
             <dd><span lang="ja">センサー入力の設計からゲーム本体の実装まで</span><span lang="en">From sensor input design to game implementation</span></dd>
-            <dt>Award</dt>
+            <dt><span lang="ja">受賞</span><span lang="en">Award</span></dt>
             <dd>NEW VIEW AWARD — Site-specific AR, GOLD PRIZE</dd>
           </dl>
         </article>
@@ -409,21 +457,21 @@
       <!-- TODO(team): ars●bit 公式サイトの表記（肩書き・ローマ字）を確認して反映 -->
       <div class="people reveal">
         <div class="people__group">
-          <p class="people__label">Supervisor</p>
+          <p class="people__label"><span lang="ja">スーパーバイザー</span><span lang="en">Supervisor</span></p>
           <ul>
             <li><a href="https://www.arsobit.com/creator-takeshi-ishikawa/" target="_blank" rel="noopener">石川武志<span class="people__en">Takeshi Ishikawa</span></a>
               <small><span lang="ja">一般社団法人 渋谷あそびば制作委員会 理事</span><span lang="en">Board Director, Shibuya Asobiba Production Committee</span></small></li>
           </ul>
         </div>
         <div class="people__group">
-          <p class="people__label">Coordinator</p>
+          <p class="people__label"><span lang="ja">コーディネーター</span><span lang="en">Coordinator</span></p>
           <ul>
             <li><a href="https://www.arsobit.com/creator-hisashi-kawakami/" target="_blank" rel="noopener">川上尚志<span class="people__en">Hisashi Kawakami</span></a>
               <small><span lang="ja">ユニバーサルアドネットワーク株式会社 代表取締役 CEO</span><span lang="en">CEO, Universal Ad Network</span></small></li>
           </ul>
         </div>
         <div class="people__group">
-          <p class="people__label">Supporters</p>
+          <p class="people__label"><span lang="ja">サポーター</span><span lang="en">Supporters</span></p>
           <ul>
             <li><a href="https://www.arsobit.com/creator-daichi-nakagawa/" target="_blank" rel="noopener">中川大地<span class="people__en">Daichi Nakagawa</span></a>
               <small><span lang="ja">評論家／編集者／ゲーム研究者</span><span lang="en">Critic / Editor / Game researcher</span></small></li>
@@ -447,7 +495,6 @@
           <div class="partners__logos">
             <a class="logo-tile" href="https://creator.ntj.jac.go.jp/" target="_blank" rel="noopener"><img src="assets/img/logos/jcsf.png" width="360" height="360" alt="Japan Creator Support Fund"></a>
           </div>
-          <p class="partners__note" lang="ja">文化芸術活動基盤強化基金（クリエイター支援基金）</p>
         </div>
       </div>
     </div>
@@ -477,7 +524,7 @@
   <div class="wrap">
     <div>
       <a class="logo" href="./">CÔGEIMU</a>
-      <p><span lang="ja">カミエナ × 塩見亮介 × 金子尊</span><span lang="en">KamiEna × Ryosuke Shiomi × Takeru Kaneko</span></p>
+      <p><span lang="ja">カミエナ × 塩見亮介 × 金子尊</span><span lang="en">KamiEna × Shiomi Ryosuke × Kaneko Takeru</span></p>
       <p>Beyond Creators Project “ars●bit”</p>
     </div>
     <p>© <span data-year>2026</span> PRJ CÔGEIMU</p>
