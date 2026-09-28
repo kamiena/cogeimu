@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var e=sessionStorage.getItem('cogeimu-eye');if(e){sessionStorage.removeItem('cogeimu-eye');e=JSON.parse(e);var d=document.documentElement;d.classList.add('eye-enter');d.style.setProperty('--eye-inside','url("'+e.img+'")');d.style.setProperty('--eye-color',e.color);var i=new Image(),r=function(){d.classList.add('eye-ready')};i.onload=i.onerror=r;setTimeout(r,900);i.src=e.img}}catch(x){}</script>
   <title>01 Yuki｜PRJ CÔGEIMU</title>
   <meta name="description" content="PRJ CÔGEIMU（COGEIMU／コーゲーム）の01 Yuki。アルミニウムの鍛金で作られた少女像の瞳を覗き込み、ココロノセカイで少女の分身を探す“かくれんぼ”のゲームアート。CV：鷲見友美ジェナ／夏來サマー">
   <meta name="keywords" content="CÔGEIMU,COGEIMU,Cogeimu,cogeimu,コーゲーム,コウゲーム,PRJ CÔGEIMU,Yuki,ユキ,鍛金,ゲームアート,鷲見友美ジェナ,夏來サマー">
@@ -96,11 +97,26 @@
     </div>
   </section>
 
-  <!-- ============ 01 TRAILER ============ -->
+  <!-- ============ CONCEPT ============ -->
+  <section class="section" id="concept">
+    <div class="wrap">
+      <div class="concept-block reveal">
+        <p class="sec-head__label" style="justify-content: center">Concept</p>
+        <p class="concept__from"><span lang="ja">作品“で”遊ぶ作品</span><span lang="en">An artwork you play on</span></p>
+        <p class="concept__to"><span lang="ja">作品“<em>と</em>”遊ぶ作品</span><span lang="en">An artwork you play <em>with</em></span></p>
+        <p class="muted concept__text">
+          <span lang="ja">話しかけてくる少女の瞳を覗き込み、彼女の内なるセカイで一緒に遊ぶ。ゲームの相手は、目の前にいる作品そのもの。</span>
+          <span lang="en">Look into the eyes of a girl who talks to you, and play together in the world inside her. Your playmate is the artwork right in front of you.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRAILER ============ -->
   <section class="section" id="trailer">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>01</b>Trailer</p>
+        <p class="sec-head__label">Trailer</p>
         <h2><span lang="ja">ティザーPV</span><span lang="en">Teaser trailer</span></h2>
       </header>
       <div class="video reveal">
@@ -113,16 +129,16 @@
     </div>
   </section>
 
-  <!-- ============ 02 FACT SHEET ============ -->
+  <!-- ============ FACT SHEET ============ -->
   <section class="section" id="facts">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>02</b>Fact sheet</p>
+        <p class="sec-head__label">Fact sheet</p>
         <h2><span lang="ja">作品データ</span><span lang="en">Fact sheet</span></h2>
       </header>
       <div class="split split--wide-left">
         <dl class="facts reveal">
-          <div><dt>Title</dt><dd><span lang="ja">なし（プロトタイプ）</span><span lang="en">Untitled (prototype)</span><small>PRJ CÔGEIMU proto / proto2</small></dd></div>
+          <div><dt>Title</dt><dd><span lang="ja">名称未定（プロトタイプ）</span><span lang="en">Untitled (Prototype)</span></dd></div>
           <div><dt>Codename</dt><dd>01 Yuki</dd></div>
           <div><dt>Form</dt><dd><span lang="ja">アルミニウムの鍛金彫刻 × インタラクティブ・ビデオゲーム</span><span lang="en">Hammered aluminium sculpture × interactive video game</span></dd></div>
           <div><dt>Hardware</dt><dd><span lang="ja">内蔵モニター（両眼の奥）</span><span lang="en">Built-in screens (behind both eyes)</span></dd></div>
@@ -132,8 +148,6 @@
             <span lang="ja">日本語：鷲見友美ジェナ<br>英語：夏來サマー</span>
             <span lang="en">Japanese: Tomomi Jiena Sumi<br>English: Summer Natsuki</span>
           </dd></div>
-          <div><dt>Year</dt><dd>2025 –</dd></div>
-          <div><dt>Debut</dt><dd><span lang="ja">2025.11 プロトタイプ発表展示会（渋谷）</span><span lang="en">Nov 2025, prototype premiere (Shibuya)</span></dd></div>
         </dl>
         <figure class="figure reveal">
           <img src="../assets/img/yuki/ingame-key-visual.webp" width="1080" height="1080" loading="lazy" alt="ココロノセカイに立つドレス" data-alt-ja="ココロノセカイに立つドレス" data-alt-en="A dress standing in the World of the Heart">
@@ -143,11 +157,11 @@
     </div>
   </section>
 
-  <!-- ============ 03 GAME ============ -->
+  <!-- ============ GAME ============ -->
   <section class="section" id="game">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>03</b>The game</p>
+        <p class="sec-head__label">The game</p>
         <h2><span lang="ja">ココロノセカイで、かくれんぼ</span><span lang="en">Hide-and-seek in the World of the Heart</span></h2>
         <p>
           <span lang="ja">瞳の奥には、少女が“知っている”モノが不自然に存在する世界が広がっている。そこには少女の分身たちが隠れ潜んでいる。あなたはこの迷宮のような世界で少女と対話しながら、分身を探し出さなければならない。</span>
@@ -188,11 +202,11 @@
     </div>
   </section>
 
-  <!-- ============ 04 CHARACTER ============ -->
+  <!-- ============ CHARACTER ============ -->
   <section class="section" id="character">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>04</b>Character</p>
+        <p class="sec-head__label">Character</p>
         <h2>Yuki</h2>
       </header>
       <div class="split split--wide-right">
@@ -220,10 +234,10 @@
     </div>
   </section>
 
-  <!-- ============ 05 STORY ============ -->
+  <!-- ============ STORY ============ -->
   <section class="section" id="story">
     <div class="wrap--narrow reveal">
-      <p class="sec-head__index" style="margin-bottom: 32px"><b>05</b>Story</p>
+      <p class="sec-head__label" style="margin-bottom: 32px">Story</p>
       <p class="statement" lang="ja">女子が生まれにくい村があった。
 人々は噂した──「女神に見放されたのだ」と。
 村が絶えることを恐れた長は、わずかに生まれた村娘のひとりを、神へと捧げた。
@@ -243,11 +257,11 @@ And then the people vanished, the village fell to ruin, and only the statue rema
     </div>
   </section>
 
-  <!-- ============ 06 PROCESS ============ -->
+  <!-- ============ PROCESS ============ -->
   <section class="section" id="process">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>06</b>Process</p>
+        <p class="sec-head__label">Process</p>
         <h2><span lang="ja">プロトタイプの制作</span><span lang="en">Building the prototypes</span></h2>
       </header>
 
@@ -267,11 +281,11 @@ And then the people vanished, the village fell to ruin, and only the statue rema
     </div>
   </section>
 
-  <!-- ============ 07 EXHIBITIONS ============ -->
+  <!-- ============ EXHIBITIONS ============ -->
   <section class="section" id="exhibitions">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>07</b>Exhibitions</p>
+        <p class="sec-head__label">Exhibitions</p>
         <h2><span lang="ja">展示</span><span lang="en">Exhibitions</span></h2>
       </header>
 
@@ -328,17 +342,33 @@ And then the people vanished, the village fell to ruin, and only the statue rema
   <!-- ============ CREDITS ============ -->
   <section class="section section--tight" id="credits">
     <div class="wrap">
-      <p class="eyebrow reveal" style="margin-bottom: 18px">Credits</p>
-      <dl class="credits reveal">
-        <div><dt>Producer / Director</dt><dd>カミエナ<small>KamiEna</small></dd></div>
-        <div><dt>Metal work</dt><dd>塩見亮介<small>Ryosuke Shiomi</small></dd></div>
-        <div><dt>Programming</dt><dd>金子尊<small>Takeru Kaneko</small></dd></div>
-        <div><dt>Supervision</dt><dd>石川武志<br>川上尚志</dd></div>
-        <div><dt>Voice (JP) / Narration</dt><dd>鷲見友美ジェナ<small>Tomomi Jiena Sumi</small></dd></div>
-        <div><dt>Voice (EN)</dt><dd>夏來サマー<small>Summer Natsuki</small></dd></div>
-        <div><dt>Recording studio</dt><dd>LORETTA studio</dd></div>
-        <div><dt>Support</dt><dd style="font-size: 14px">文化芸術活動基盤強化基金<br>（クリエイター支援基金）</dd></div>
-      </dl>
+      <p class="sec-head__label reveal">Credits</p>
+      <div class="credit-list reveal">
+        <div class="credit-list__group">
+          <h3 class="credit-list__heading"><span lang="ja">制作</span><span lang="en">Creators</span></h3>
+          <dl>
+            <div><dt>Producer / Director</dt><dd>カミエナ <span>KamiEna</span></dd></div>
+            <div><dt>Metal Artist</dt><dd>塩見亮介 <span>Ryosuke Shiomi</span></dd></div>
+            <div><dt>Engineer / Technical Artist</dt><dd>金子尊 <span>Takeru Kaneko</span></dd></div>
+          </dl>
+        </div>
+        <div class="credit-list__group">
+          <h3 class="credit-list__heading"><span lang="ja">キャスト</span><span lang="en">Cast</span></h3>
+          <dl>
+            <div><dt><span lang="ja">ユキ（日本語）・ナレーション</span><span lang="en">Yuki (Japanese) / Narration</span></dt><dd>鷲見友美ジェナ <span>Tomomi Jiena Sumi</span></dd></div>
+            <div><dt><span lang="ja">ユキ（英語）</span><span lang="en">Yuki (English)</span></dt><dd>夏來サマー <span>Summer Natsuki</span></dd></div>
+          </dl>
+        </div>
+        <div class="credit-list__group">
+          <h3 class="credit-list__heading"><span lang="ja">収録</span><span lang="en">Recording</span></h3>
+          <dl>
+            <div><dt><span lang="ja">収録スタジオ</span><span lang="en">Recording studio</span></dt><dd>LORETTA studio</dd></div>
+            <div><dt><span lang="ja">音響制作進行</span><span lang="en">Sound production</span></dt><dd>野長瀬美慧</dd></div>
+            <div><dt><span lang="ja">録音エンジニア</span><span lang="en">Recording engineer</span></dt><dd>熊谷実結</dd></div>
+            <div><dt><span lang="ja">編集エンジニア</span><span lang="en">Editing engineer</span></dt><dd>鈴木慎梧</dd></div>
+          </dl>
+        </div>
+      </div>
     </div>
   </section>
 

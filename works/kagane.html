@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var e=sessionStorage.getItem('cogeimu-eye');if(e){sessionStorage.removeItem('cogeimu-eye');e=JSON.parse(e);var d=document.documentElement;d.classList.add('eye-enter');d.style.setProperty('--eye-inside','url("'+e.img+'")');d.style.setProperty('--eye-color',e.color);var i=new Image(),r=function(){d.classList.add('eye-ready')};i.onload=i.onerror=r;setTimeout(r,900);i.src=e.img}}catch(x){}</script>
   <title>02 Kagane「ARE YOU THERE?」｜PRJ CÔGEIMU</title>
   <meta name="description" content="PRJ CÔGEIMU（COGEIMU／コーゲーム）の02 Kagane「ARE YOU THERE?」。銅の鍛金で作られた少女像カガネの頬に触れて体温を伝え、ピンポンのラリーで対話するゲームアート。CV：東山奈央／天城サリー">
   <meta name="keywords" content="CÔGEIMU,COGEIMU,Cogeimu,cogeimu,コーゲーム,コウゲーム,PRJ CÔGEIMU,Kagane,カガネ,ARE YOU THERE?,鍛金,ゲームアート,東山奈央,天城サリー">
@@ -81,7 +82,8 @@
   </section>
 
   <!-- ============ STATEMENT ============ -->
-  <section class="section">
+  <section class="section section--bg">
+    <div class="section__bg" style="background-image: url('../assets/img/kagane/ingame-cave-copper.webp')" aria-hidden="true"></div>
     <div class="wrap--narrow reveal">
       <p class="statement" lang="ja"><b>「そこにいるの？ 一緒に遊ぼう？」</b>と語りかける銅の少女像”カガネ”。
 あなたは銅の少女と向き合い、目と目を合わせ、頬に触れて体温を伝えながら、原初的なビデオゲームで遊ぶ。
@@ -96,51 +98,50 @@ And somehow, unmistakably, Kagane is there.</p>
     </div>
   </section>
 
-  <!-- ============ 01 OVERVIEW ============ -->
-  <section class="section" id="overview">
+  <!-- ============ CONCEPT ============ -->
+  <section class="section" id="concept">
     <div class="wrap">
-      <header class="sec-head reveal">
-        <p class="sec-head__index"><b>01</b>Overview</p>
-        <h2><span lang="ja">作品概要</span><span lang="en">Overview</span></h2>
-      </header>
-      <div class="split split--wide-right">
-        <div class="reveal">
-          <div class="concept" style="text-align: left">
-            <p class="concept__from"><span lang="ja">作品“で”遊ぶ</span><span lang="en">Play on the work</span></p>
-            <p class="concept__to" style="font-size: clamp(28px, 4vw, 44px)"><span lang="ja">作品“<em>と</em>”遊ぶ</span><span lang="en">Play <em>with</em> her</span></p>
-          </div>
-        </div>
-        <ol class="steps reveal">
-          <li>
-            <h3><span lang="ja">鍛金で作られた少女の像</span><span lang="en">A girl made of hammered copper</span></h3>
-            <p><span lang="ja">目の中は空洞になっていて、その奥にはモニターがある。覗き込むと、ゲームで遊ぶことができる。</span><span lang="en">Her eyes are hollow, with screens set deep inside. Lean in and look into them, and you can play.</span></p>
-          </li>
-          <li>
-            <h3><span lang="ja">インゲームはピンポンゲーム</span><span lang="en">The game is pong</span></h3>
-            <p><span lang="ja">自分のバーを操作し、球を跳ね返す原初のデジタルゲームがベース。左右の頬にプレイヤーの体温を伝えることで操作する。</span><span lang="en">Based on the very first kind of digital game: move your paddle and return the ball. You control it by passing the warmth of your hands to her left and right cheeks.</span></p>
-          </li>
-          <li>
-            <h3><span lang="ja">目指すのは、新たな芸術の形</span><span lang="en">Towards a new form of art</span></h3>
-            <p><span lang="ja">少女と一緒にゲームを遊ぶ体験を通じて、他者と関わることの難しさや楽しさを描く。遊び終わった後に、少女と遊んだ“思い出”が残るような作品を目指す。</span><span lang="en">Through playing a game together with her, the work explores the difficulty and joy of relating to another. We want players to walk away with a <em>memory</em> of the time they spent with her.</span></p>
-          </li>
-        </ol>
+      <div class="concept-block reveal">
+        <p class="sec-head__label" style="justify-content: center">Concept</p>
+        <p class="concept__from"><span lang="ja">作品“で”遊ぶ作品</span><span lang="en">An artwork you play on</span></p>
+        <p class="concept__to"><span lang="ja">作品“<em>と</em>”遊ぶ作品</span><span lang="en">An artwork you play <em>with</em></span></p>
+        <p class="concept__theme"><span class="concept__theme-label">Theme</span><span lang="ja">対話</span><span lang="en">Dialogue</span></p>
+        <p class="muted concept__text">
+          <span lang="ja">目の前の少女と向き合い、目を合わせ、触れて、一緒に遊ぶ。他者と関わることの難しさと楽しさを、プリミティブなゲーム性に落とし込み、少女との“対話”そのものを遊びにする。</span>
+          <span lang="en">Face her, meet her eyes, touch her, and play together. The difficulty and the joy of relating to someone else are distilled into the most primitive kind of game — so that the <em>dialogue</em> with her becomes the play itself.</span>
+        </p>
       </div>
+
+      <ol class="steps steps--row reveal">
+        <li>
+          <h3><span lang="ja">鍛金で作られた少女の像</span><span lang="en">A girl made of hammered copper</span></h3>
+          <p><span lang="ja">目の中は空洞になっていて、その奥にはモニターがある。覗き込むと、ゲームで遊ぶことができる。</span><span lang="en">Her eyes are hollow, with screens set deep inside. Lean in and look into them, and you can play.</span></p>
+        </li>
+        <li>
+          <h3><span lang="ja">インゲームはピンポンゲーム</span><span lang="en">The game is pong</span></h3>
+          <p><span lang="ja">球を跳ね返す原初のデジタルゲームがベース。左右の頬にプレイヤーの体温を伝えることで操作する。</span><span lang="en">Based on the very first kind of digital game. You control it by passing the warmth of your hands to her left and right cheeks.</span></p>
+        </li>
+        <li>
+          <h3><span lang="ja">遊びのあとに残る“思い出”</span><span lang="en">A memory that stays</span></h3>
+          <p><span lang="ja">遊び終わった後に、少女と遊んだ“思い出”がプレイヤーに残るような、新たな芸術の形を目指す。</span><span lang="en">We aim for a new form of art — one where players walk away with a <em>memory</em> of the time they spent with her.</span></p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ============ 02 FACT SHEET ============ -->
+  <!-- ============ FACT SHEET ============ -->
   <section class="section" id="facts">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>02</b>Fact sheet</p>
+        <p class="sec-head__label">Fact sheet</p>
         <h2><span lang="ja">作品データ</span><span lang="en">Fact sheet</span></h2>
       </header>
-      <div class="split split--wide-left">
+      <div class="split split--center">
         <dl class="facts reveal">
           <div><dt>Title</dt><dd>ARE YOU THERE?</dd></div>
           <div><dt>Codename</dt><dd>02 Kagane</dd></div>
-          <div><dt><span lang="ja">Form</span><span lang="en">Form</span></dt><dd><span lang="ja">銅の鍛金彫刻 × インタラクティブ・ビデオゲーム（一点物）</span><span lang="en">Hammered copper sculpture × interactive video game (one of a kind)</span></dd></div>
-          <div><dt>Hardware</dt><dd><span lang="ja">内蔵モニター（両眼の奥）／温度センサー（両頬）／マイク（口）</span><span lang="en">Built-in screens (behind both eyes) / temperature sensors (both cheeks) / microphone (mouth)</span></dd></div>
+          <div><dt>Form</dt><dd><span lang="ja">銅の鍛金彫刻 × インタラクティブ・ビデオゲーム</span><span lang="en">Hammered copper sculpture × interactive video game</span></dd></div>
+          <div><dt>Hardware</dt><dd><span lang="ja">内蔵モニター（両眼の奥）／温度センサー（両頬）</span><span lang="en">Built-in screens (behind both eyes) / temperature sensors (both cheeks)</span></dd></div>
           <div><dt>Input</dt><dd><span lang="ja">プレイヤーの体温 ─ 両頬に手で触れる</span><span lang="en">The player’s body heat — touching both cheeks</span></dd></div>
           <div><dt>Genre</dt><dd><span lang="ja">金属肌の少女と向き合い、目を合わせて対話するゲームアート</span><span lang="en">Game art in which you face a metal-skinned girl, meet her eyes and converse</span></dd></div>
           <div><dt>Players</dt><dd><span lang="ja">1人（対戦相手は作品そのもの）</span><span lang="en">1 (your opponent is the artwork itself)</span></dd></div>
@@ -149,29 +150,26 @@ And somehow, unmistakably, Kagane is there.</p>
             <span lang="ja">日本語：東山奈央<br>英語：天城サリー</span>
             <span lang="en">Japanese: Nao Toyama<br>English: Sally Amaki</span>
           </dd></div>
-          <div><dt>Venue</dt><dd><span lang="ja">ギャラリー／美術館／アートフェア／ゲームイベント</span><span lang="en">Galleries / museums / art fairs / game events</span></dd></div>
-          <div><dt>Status</dt><dd><span lang="ja">制作中</span><span lang="en">In production</span></dd></div>
         </dl>
-        <figure class="figure reveal">
-          <img src="../assets/img/kagane/ingame-concept.webp" width="1000" height="1017" loading="lazy" alt="インゲームのコンセプトアート：坑道の奥" data-alt-ja="インゲームのコンセプトアート：坑道の奥" data-alt-en="In-game concept art: deep inside a mine shaft">
-          <figcaption><span lang="ja">インゲームのコンセプトアート ─ 坑道の奥へ</span><span lang="en">In-game concept art — into the depths of the mine</span></figcaption>
+        <!-- 案A：目の形に切り抜いて「覗き込んだ見え方」を表現 -->
+        <figure class="eye-view reveal">
+          <div class="eye-view__socket">
+            <img src="../assets/img/kagane/ingame-pong.webp" width="1600" height="1020" loading="lazy" alt="インゲーム：坑道の奥でのピンポン" data-alt-ja="インゲーム：坑道の奥でのピンポン" data-alt-en="In-game: pong deep inside the mine">
+          </div>
+          <figcaption><span lang="ja">瞳の奥に広がる、坑道の世界</span><span lang="en">The mine that lies behind her eyes</span></figcaption>
         </figure>
       </div>
-      <p class="note reveal" style="margin-top: 28px">
-        <span lang="ja">複製は行わず、世界に1つだけのゲームアート作品とする予定です。完成後は各イベントや展示会に出展予定です。</span>
-        <span lang="en">No copies will be made: this will be a single, one-of-a-kind work of game art. Once complete, it will tour events and exhibitions.</span>
-      </p>
     </div>
   </section>
 
-  <!-- ============ 03 SCULPTURE ============ -->
+  <!-- ============ SCULPTURE ============ -->
   <section class="section" id="sculpture">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>03</b>The sculpture</p>
+        <p class="sec-head__label">The sculpture</p>
         <h2><span lang="ja">外装 ─ 覗き込み、目を合わせる</span><span lang="en">The sculpture — lean in, meet her eyes</span></h2>
       </header>
-      <div class="split">
+      <div class="split split--wide-right">
         <ul class="bullets reveal">
           <li><strong><span lang="ja">素材・技法</span><span lang="en">Material &amp; technique</span></strong> ─ <span lang="ja">銅／鍛金（金属を叩いて成形する伝統技法）</span><span lang="en">copper / <i>tankin</i>, the traditional technique of shaping metal by hammering</span></li>
           <li><strong><span lang="ja">制作</span><span lang="en">Made by</span></strong> ─ <span lang="ja">塩見亮介（鍛金家・甲冑師）</span><span lang="en">Ryosuke Shiomi (metal artist, armour maker)</span></li>
@@ -180,21 +178,20 @@ And somehow, unmistakably, Kagane is there.</p>
           <li><strong><span lang="ja">両頬</span><span lang="en">Cheeks</span></strong> ─ <span lang="ja">温度センサーを内蔵。触れることで人の温もりがジワっと伝わり、入力が発生する</span><span lang="en">built-in temperature sensors; your warmth slowly seeps in and becomes input</span></li>
           <li><strong><span lang="ja">台座</span><span lang="en">Plinth</span></strong> ─ <span lang="ja">覗き込みやすい高さに設置（展示環境に応じて調整）</span><span lang="en">set at a height that makes leaning in natural (adjusted per venue)</span></li>
         </ul>
-        <div class="gallery reveal" style="grid-template-columns: 1fr 1fr">
-          <img src="../assets/img/kagane/process-01.webp" width="1198" height="675" loading="lazy" alt="銅を打ち出して成形する様子" data-alt-ja="銅を打ち出して成形する様子" data-alt-en="Hammering the copper into shape">
-          <img src="../assets/img/kagane/process-05.webp" width="512" height="288" loading="lazy" alt="銅の頭部のクローズアップ" data-alt-ja="銅の頭部のクローズアップ" data-alt-en="Close-up of the copper head">
-          <img src="../assets/img/kagane/process-03.webp" width="1200" height="675" loading="lazy" alt="銅の頭部を焼きなます様子" data-alt-ja="銅の頭部を焼きなます様子" data-alt-en="Annealing the copper head">
-          <img src="../assets/img/kagane/process-02.webp" width="1200" height="675" loading="lazy" alt="打ち出しによる成形" data-alt-ja="打ち出しによる成形" data-alt-en="Shaping by repoussé">
+        <div class="portraits reveal">
+          <img src="../assets/img/kagane/sculpture-front.webp" width="1000" height="1778" loading="lazy" alt="瞳の奥にゲーム画面が映るカガネ" data-alt-ja="瞳の奥にゲーム画面が映るカガネ" data-alt-en="Kagane, with the game glowing behind her eyes">
+          <img src="../assets/img/kagane/sculpture-profile.webp" width="1000" height="1778" loading="lazy" alt="カガネの横顔" data-alt-ja="カガネの横顔" data-alt-en="Kagane in profile">
+          <img src="../assets/img/kagane/sculpture-plinth.webp" width="1000" height="1778" loading="lazy" alt="台座に据えられたカガネ" data-alt-ja="台座に据えられたカガネ" data-alt-en="Kagane mounted on her plinth">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 04 INTERFACE ============ -->
+  <!-- ============ INTERFACE ============ -->
   <section class="section" id="interface">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>04</b>Interface</p>
+        <p class="sec-head__label">Interface</p>
         <h2><span lang="ja">頬に触れる ─ 体温が、入力になる</span><span lang="en">Touch her cheeks — body heat as input</span></h2>
       </header>
       <div class="split split--center">
@@ -210,19 +207,19 @@ And somehow, unmistakably, Kagane is there.</p>
             <circle cx="80" cy="70" r="54" fill="url(#warm)"/>
             <circle cx="80" cy="70" r="36" class="d-accent-line"/>
             <text x="80" y="66" text-anchor="middle" class="d-strong"><tspan lang="ja">左頬</tspan><tspan lang="en">Left</tspan></text>
-            <text x="80" y="84" text-anchor="middle" style="font-size: 10px">WARM</text>
+            <text x="80" y="86" text-anchor="middle" style="font-size: 12px">WARM</text>
             <circle cx="360" cy="70" r="54" fill="url(#warm)"/>
             <circle cx="360" cy="70" r="36" class="d-accent-line"/>
             <text x="360" y="66" text-anchor="middle" class="d-strong"><tspan lang="ja">右頬</tspan><tspan lang="en">Right</tspan></text>
-            <text x="360" y="84" text-anchor="middle" style="font-size: 10px">WARM</text>
+            <text x="360" y="86" text-anchor="middle" style="font-size: 12px">WARM</text>
             <path d="M80 108 V 230" class="d-line" stroke-dasharray="3 5"/>
             <path d="M360 108 V 230" class="d-line" stroke-dasharray="3 5"/>
             <rect x="60" y="170" width="320" height="100" class="d-line"/>
-            <text x="220" y="190" text-anchor="middle" style="font-size: 10px"><tspan lang="ja">少女の内側 ＝ プレイフィールド</tspan><tspan lang="en">INSIDE HER = THE PLAYFIELD</tspan></text>
-            <rect x="190" y="236" width="60" height="8" rx="4" fill="#e8b18a"/>
-            <path d="M180 240 H 110 M 104 240 l 8 -5 v 10 z" stroke="#c8845b" fill="#c8845b"/>
-            <path d="M260 240 H 330 M 336 240 l -8 -5 v 10 z" stroke="#c8845b" fill="#c8845b"/>
-            <text x="220" y="262" text-anchor="middle" style="font-size: 10px"><tspan lang="ja">自機（バー）</tspan><tspan lang="en">YOUR PADDLE</tspan></text>
+            <text x="220" y="192" text-anchor="middle" style="font-size: 12px"><tspan lang="ja">少女の内側 ＝ プレイフィールド</tspan><tspan lang="en">INSIDE HER = THE PLAYFIELD</tspan></text>
+            <rect x="190" y="232" width="60" height="8" rx="4" fill="#e8b18a"/>
+            <path d="M180 236 H 110 M 104 236 l 8 -5 v 10 z" stroke="#c8845b" fill="#c8845b"/>
+            <path d="M260 236 H 330 M 336 236 l -8 -5 v 10 z" stroke="#c8845b" fill="#c8845b"/>
+            <text x="220" y="262" text-anchor="middle" style="font-size: 12px"><tspan lang="ja">自機（バー）</tspan><tspan lang="en">YOUR PADDLE</tspan></text>
           </svg>
         </div>
         <div class="reveal">
@@ -241,51 +238,39 @@ And somehow, unmistakably, Kagane is there.</p>
     </div>
   </section>
 
-  <!-- ============ 05 GAME ============ -->
+  <!-- ============ GAME ============ -->
   <section class="section" id="game">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>05</b>The game</p>
+        <p class="sec-head__label">The game</p>
         <h2><span lang="ja">勝つためではなく、続けるためのピンポン</span><span lang="en">Pong — played not to win, but to keep going</span></h2>
       </header>
-      <div class="split split--center">
-        <div class="reveal">
-          <ul class="bullets">
-            <li><span lang="ja">原初のデジタルゲームでもある、ピンポンゲーム。</span><span lang="en">Pong — one of the very first digital games.</span></li>
-            <li><span lang="ja">右頬を温めると自機が右へ、左頬を温めると左へ移動する。</span><span lang="en">Warm her right cheek to move right, her left cheek to move left.</span></li>
-            <li><span lang="ja">相手に打ち返させず、ボールを後ろへ通過させると得点。</span><span lang="en">Get the ball past her paddle to score.</span></li>
-            <li><span lang="ja">対戦相手は鍛金少女。作品そのものが対戦相手になる。</span><span lang="en">Your opponent is the girl — the artwork itself.</span></li>
-            <li><span lang="ja">少女は機嫌に合わせて“イタズラ”もしてくる。</span><span lang="en">Depending on her mood, she’ll start playing <em>pranks</em> on you.</span></li>
-          </ul>
-          <p class="callout">
-            <span lang="ja">得点を取ることはゴールではない。なるべく同点のままラリーを続けること ── 対等な立場でコミュニケーションを取り続けること ── で、美しい対話を行うことがこのゲームのゴール。</span>
-            <span lang="en">Scoring isn’t the goal. The goal is a beautiful conversation: keeping the rally going with the score as even as possible — communicating with her as an equal.</span>
-          </p>
-        </div>
-        <div class="reveal">
-          <svg class="diagram" viewBox="0 0 320 360" role="img" aria-labelledby="pong-t" style="max-width: 360px; margin-inline: auto; display: block">
-            <title id="pong-t">Schematic of the playfield: her paddle at the far end of the mine shaft, yours at the near end.</title>
-            <rect x="20" y="10" width="280" height="340" class="d-line"/>
-            <rect x="80" y="30" width="160" height="44" fill="rgba(255,255,255,.03)"/>
-            <text x="160" y="57" text-anchor="middle" style="font-size: 10px"><tspan lang="ja">坑道の奥へ</tspan><tspan lang="en">INTO THE MINE</tspan></text>
-            <rect x="120" y="110" width="80" height="8" rx="4" fill="#9fdbe4" opacity=".8"/>
-            <text x="212" y="118" style="font-size: 10px"><tspan lang="ja">少女</tspan><tspan lang="en">HER</tspan></text>
-            <path d="M160 118 L 128 212 L 176 306" stroke="rgba(255,255,255,.2)" stroke-dasharray="2 5" fill="none"/>
-            <circle cx="128" cy="212" r="6" fill="#e9e5df"/>
-            <rect x="130" y="306" width="96" height="10" rx="5" fill="#e8b18a"/>
-            <text x="178" y="336" text-anchor="middle" style="font-size: 10px"><tspan lang="ja">自機（プレイヤー）</tspan><tspan lang="en">YOU</tspan></text>
-          </svg>
-          <p class="note" style="text-align: center"><span lang="ja">画面イメージは模式図です</span><span lang="en">Schematic only</span></p>
-        </div>
+    </div>
+    <!-- 案B：全幅＋周辺減光（ビネット）で、覗き込んだ暗さを表現 -->
+    <figure class="screen-shot reveal">
+      <img src="../assets/img/kagane/ingame-pong.webp" width="1600" height="1020" loading="lazy" alt="インゲーム：カガネとのピンポン" data-alt-ja="インゲーム：カガネとのピンポン" data-alt-en="In-game: a rally of pong with Kagane">
+    </figure>
+    <div class="wrap">
+      <div class="split" style="margin-top: clamp(40px, 6vw, 72px)">
+        <ul class="bullets reveal">
+          <li><span lang="ja">原初のデジタルゲームでもある、ピンポンゲーム。舞台は坑道の奥。</span><span lang="en">Pong — one of the very first digital games — played deep inside a mine.</span></li>
+          <li><span lang="ja">右頬を温めると自機が右へ、左頬を温めると左へ移動する。</span><span lang="en">Warm her right cheek to move right, her left cheek to move left.</span></li>
+          <li><span lang="ja">相手に打ち返させず、ボールを後ろへ通過させると得点。</span><span lang="en">Get the ball past her paddle to score.</span></li>
+          <li><span lang="ja">対戦相手は鍛金少女。作品そのものが対戦相手になる。</span><span lang="en">Your opponent is the girl — the artwork itself.</span></li>
+        </ul>
+        <p class="callout reveal" style="margin-top: 0">
+          <span lang="ja">得点を取ることはゴールではない。なるべく同点のままラリーを続けること ── 対等な立場でコミュニケーションを取り続けること ── で、美しい対話を行うことがこのゲームのゴール。</span>
+          <span lang="en">Scoring isn’t the goal. The goal is a beautiful conversation: keeping the rally going with the score as even as possible — communicating with her as an equal.</span>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 06 MOOD ============ -->
+  <!-- ============ MOOD ============ -->
   <section class="section" id="mood">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>06</b>Her mood</p>
+        <p class="sec-head__label">Her mood</p>
         <h2><span lang="ja">気まぐれな、対戦相手</span><span lang="en">A playful opponent</span></h2>
         <p>
           <span lang="ja">カガネには感情がある。ラリーが続けば盛り上がり、上手く点が取れると喜ぶ。わざと負けられたり、点差が開いたままだと機嫌を損ねる。楽しませるには、会話と同じく、相手を想った押し引きが大切。</span>
@@ -309,6 +294,10 @@ And somehow, unmistakably, Kagane is there.</p>
           <p><span lang="ja">カーブ球が加わったり、次の得点が2倍になったり……ルールを決めるのは彼女。</span><span lang="en">Curveballs appear, the next point is worth double… she makes the rules.</span></p>
         </div>
       </div>
+      <div class="duo reveal">
+        <img src="../assets/img/kagane/ingame-cave-copper.webp" width="1600" height="1017" loading="lazy" alt="インゲーム：銅と緑青の坑道" data-alt-ja="インゲーム：銅と緑青の坑道" data-alt-en="In-game: a mine of copper and verdigris">
+        <img src="../assets/img/kagane/ingame-cave-violet.webp" width="1600" height="1029" loading="lazy" alt="インゲーム：紫に染まった坑道" data-alt-ja="インゲーム：紫に染まった坑道" data-alt-en="In-game: the mine stained violet">
+      </div>
       <p class="callout reveal">
         <span lang="ja">機嫌が良くなるほど、カガネはイタズラを仕掛けてくる。そして彼女が楽しめていれば、3点マッチは5点、7点へと延長されていく。思いつきに振り回されながら、それでも一緒に遊ぶ ── それが、作品“と”遊ぶということ。</span>
         <span lang="en">The better her mood, the more pranks she plays — and if she’s enjoying herself, a 3-point match stretches to 5, then 7. Pushed around by her whims, you play on together anyway. That is what it means to play <em>with</em> the work.</span>
@@ -316,11 +305,11 @@ And somehow, unmistakably, Kagane is there.</p>
     </div>
   </section>
 
-  <!-- ============ 07 CHARACTER ============ -->
+  <!-- ============ CHARACTER ============ -->
   <section class="section" id="character">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>07</b>Character</p>
+        <p class="sec-head__label">Character</p>
         <h2><span lang="ja">カガネ</span><span lang="en">Kagane</span></h2>
       </header>
       <div class="split split--wide-right" style="margin-bottom: clamp(48px, 7vw, 80px)">
@@ -355,23 +344,23 @@ And somehow, unmistakably, Kagane is there.</p>
     </div>
   </section>
 
-  <!-- ============ 08 PROCESS ============ -->
+  <!-- ============ PROCESS ============ -->
   <section class="section" id="process">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-head__index"><b>08</b>Process</p>
+        <p class="sec-head__label">Process</p>
         <h2><span lang="ja">制作の様子</span><span lang="en">In the making</span></h2>
         <p>
           <span lang="ja">プロトタイプ（01 Yuki）での検証を経て、銅による本制作がスタートしました。</span>
-          <span lang="en">After testing with the prototype (01 Yuki), production of the copper piece is now under way.</span>
+          <span lang="en">After testing with the prototype (01 Yuki), production of the copper piece began.</span>
         </p>
       </header>
-      <div class="gallery gallery--lead reveal">
+      <div class="process-grid reveal">
+        <img class="process-grid__tall" src="../assets/img/kagane/sculpture-workshop.webp" width="1000" height="1333" loading="lazy" alt="工房に置かれた銅の頭部と、壁のスケッチ" data-alt-ja="工房に置かれた銅の頭部と、壁のスケッチ" data-alt-en="The copper head in the studio, with the sketch on the wall">
         <img src="../assets/img/kagane/process-02.webp" width="1200" height="675" loading="lazy" alt="銅の頭部を鍛金で成形する" data-alt-ja="銅の頭部を鍛金で成形する" data-alt-en="Hammering the copper head">
-        <img src="../assets/img/kagane/process-06.webp" width="1198" height="675" loading="lazy" alt="工房での作業" data-alt-ja="工房での作業" data-alt-en="At work in the studio">
         <img src="../assets/img/kagane/process-03.webp" width="1200" height="675" loading="lazy" alt="銅の頭部を焼きなます" data-alt-ja="銅の頭部を焼きなます" data-alt-en="Annealing the copper">
+        <img src="../assets/img/kagane/process-06.webp" width="1198" height="675" loading="lazy" alt="工房での作業" data-alt-ja="工房での作業" data-alt-en="At work in the studio">
         <img src="../assets/img/kagane/process-04.webp" width="1200" height="675" loading="lazy" alt="ゲームの実装作業" data-alt-ja="ゲームの実装作業" data-alt-en="Programming the game">
-        <img src="../assets/img/kagane/process-01.webp" width="1198" height="675" loading="lazy" alt="打ち出しによる成形" data-alt-ja="打ち出しによる成形" data-alt-en="Shaping by repoussé">
       </div>
       <p class="note reveal" style="margin-top: 20px">
         <span lang="ja">art bit #6（2026）では、Yuki の像を使ってカガネの遊びのテスト展示を行いました。</span>
@@ -383,14 +372,25 @@ And somehow, unmistakably, Kagane is there.</p>
   <!-- ============ CREDITS ============ -->
   <section class="section section--tight" id="credits">
     <div class="wrap">
-      <p class="eyebrow reveal" style="margin-bottom: 18px">Credits</p>
-      <dl class="credits reveal">
-        <div><dt>Direction</dt><dd>カミエナ<small>KamiEna</small></dd></div>
-        <div><dt>Metal work</dt><dd>塩見亮介<small>Ryosuke Shiomi</small></dd></div>
-        <div><dt>Programming</dt><dd>金子尊<small>Takeru Kaneko</small></dd></div>
-        <div><dt>Voice (JP)</dt><dd>東山奈央<small>Nao Toyama</small></dd></div>
-        <div><dt>Voice (EN)</dt><dd>天城サリー<small>Sally Amaki</small></dd></div>
-      </dl>
+      <p class="sec-head__label reveal">Credits</p>
+      <div class="credit-list reveal">
+        <div class="credit-list__group">
+          <h3 class="credit-list__heading"><span lang="ja">制作</span><span lang="en">Creators</span></h3>
+          <dl>
+            <div><dt>Producer / Director</dt><dd>カミエナ <span>KamiEna</span></dd></div>
+            <div><dt>Metal Artist</dt><dd>塩見亮介 <span>Ryosuke Shiomi</span></dd></div>
+            <div><dt>Engineer / Technical Artist</dt><dd>金子尊 <span>Takeru Kaneko</span></dd></div>
+          </dl>
+        </div>
+        <div class="credit-list__group">
+          <h3 class="credit-list__heading"><span lang="ja">キャスト</span><span lang="en">Cast</span></h3>
+          <dl>
+            <div><dt><span lang="ja">カガネ（日本語）</span><span lang="en">Kagane (Japanese)</span></dt><dd>東山奈央 <span>Nao Toyama</span></dd></div>
+            <div><dt><span lang="ja">カガネ（英語）</span><span lang="en">Kagane (English)</span></dt><dd>天城サリー <span>Sally Amaki</span></dd></div>
+          </dl>
+        </div>
+        <!-- TODO(kagane): 収録スタジオ・音響監督の情報をもらったら「サウンド」グループとして追加 -->
+      </div>
     </div>
   </section>
 
