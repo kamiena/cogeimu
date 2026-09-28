@@ -502,6 +502,10 @@ html[lang="ja"] .statement { font-family: var(--f-head); letter-spacing: 0.1em; 
 .theme-yuki .callout { border-color: rgba(159, 219, 228, 0.3); background: linear-gradient(135deg, rgba(159,219,228,0.07), rgba(159,219,228,0.01)); }
 html[lang="en"] .callout { font-family: var(--f-body); letter-spacing: 0.01em; line-height: 1.7; }
 
+/* embedded video */
+.video { position: relative; aspect-ratio: 16 / 9; background: var(--bg-2); border: 1px solid var(--line); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 /* diagrams */
 .diagram { width: 100%; height: auto; }
 .diagram text { font-family: var(--f-type); fill: var(--text-2); font-size: 12px; letter-spacing: 0.08em; }
@@ -509,29 +513,6 @@ html[lang="en"] .callout { font-family: var(--f-body); letter-spacing: 0.01em; l
 .diagram .d-accent { fill: var(--accent-hi); }
 .diagram .d-line { stroke: var(--line-strong); fill: none; }
 .diagram .d-accent-line { stroke: var(--accent); fill: none; }
-
-.flow { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-@media (min-width: 760px) { .flow { grid-template-columns: repeat(4, 1fr); } }
-.flow__step { background: var(--bg); padding: 26px 22px; position: relative; }
-.flow__step .card__label { margin-bottom: 6px; }
-.flow__step b { display: block; font-family: var(--f-head); font-weight: 500; font-size: 20px; letter-spacing: 0.08em; margin-bottom: 10px; }
-.flow__step p { color: var(--text-2); font-size: 13px; }
-.flow__step:last-child { background: linear-gradient(160deg, rgba(200,132,91,0.14), var(--bg) 70%); }
-
-.traits { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-@media (min-width: 760px) { .traits { grid-template-columns: 1fr 1fr; } }
-.trait { background: var(--bg); padding: clamp(24px, 3vw, 34px); }
-.trait__metal { font-family: var(--f-type); font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
-.trait__metal::before { content: "Cu — "; color: var(--accent); }
-.trait h3 { font-family: var(--f-head); font-weight: 500; font-size: 19px; letter-spacing: 0.1em; margin: 8px 0 12px; color: var(--accent-hi); }
-.trait p { color: var(--text-2); font-size: 14px; }
-
-.voices { display: grid; gap: 18px; }
-@media (min-width: 900px) { .voices { grid-template-columns: repeat(3, 1fr); } }
-.voice { border-top: 1px solid var(--accent); padding-top: 20px; }
-.voice q { quotes: "「" "」"; font-family: var(--f-head); font-size: 17px; line-height: 1.9; letter-spacing: 0.06em; }
-html[lang="en"] .voice q { quotes: "“" "”"; font-family: var(--f-logo); font-size: 21px; line-height: 1.45; letter-spacing: 0; font-style: italic; }
-.voice span { display: block; margin-top: 10px; font-family: var(--f-type); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
 
 .credits { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
 @media (min-width: 760px) { .credits { grid-template-columns: repeat(4, 1fr); } }
