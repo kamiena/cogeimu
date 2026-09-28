@@ -305,6 +305,7 @@ html[lang="en"] .concept__to em { font-style: italic; }
 .posmap { width: 100%; max-width: 520px; margin-inline: auto; }
 .posmap text { font-family: var(--f-type); fill: var(--muted); font-size: 12.5px; letter-spacing: 0.1em; }
 .posmap .q { font-family: var(--f-head); fill: var(--text-2); font-size: 15px; letter-spacing: 0.08em; }
+.posmap .pm-note { fill: var(--copper-hi); font-size: 12px; letter-spacing: 0.04em; paint-order: stroke; stroke: var(--bg); stroke-width: 5px; }
 .posmap .brand { font-family: var(--f-logo); fill: var(--accent-hi); font-size: 20px; letter-spacing: 0.08em; }
 
 /* ---------- works ---------- */
@@ -568,7 +569,7 @@ html[lang="en"] .credit-list__heading { font-family: var(--f-logo); font-size: 2
 .credit-list dl > div { padding: 7px 0; }
 .credit-list dt { font-family: var(--f-type); font-size: 13px; letter-spacing: 0.06em; color: var(--muted); }
 .credit-list dd { margin: 2px 0 0; font-size: 16px; letter-spacing: 0.06em; }
-.credit-list dd span { font-family: var(--f-logo); font-style: italic; color: var(--text-2); margin-left: 6px; letter-spacing: 0.02em; }
+html[lang="en"] .credit-list dd { letter-spacing: 0.02em; }
 
 .next-work {
   display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px;
@@ -660,27 +661,78 @@ html[lang="en"] .concept__theme { font-family: var(--f-logo); letter-spacing: 0.
   .process-grid__tall { grid-row: span 2; aspect-ratio: auto !important; }
 }
 
-/* =========================================================
-   "Into her eye" page transition
-   ========================================================= */
-.eye-zoom {
-  position: fixed; inset: 0; z-index: 400; pointer-events: none; overflow: hidden;
+/* work card title helper */
+.work__title small { font-size: 0.55em; letter-spacing: 0.08em; color: var(--text-2); font-weight: 400; }
+
+/* record: exhibitions */
+.timeline--wide li { grid-template-columns: 11em 1fr; }
+@media (max-width: 560px) { .timeline li, .timeline--wide li { grid-template-columns: 1fr; gap: 4px; } }
+
+/* record: media */
+.media { margin-top: clamp(64px, 9vw, 104px); }
+.media__sub {
+  font-family: var(--f-head); font-size: 17px; letter-spacing: 0.12em; margin: clamp(48px, 6vw, 64px) 0 16px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
 }
-.eye-zoom__img { position: absolute; will-change: transform; transform-origin: 0 0; }
-.eye-zoom__inside {
-  position: absolute; inset: 0; opacity: 0;
-  background-size: cover; background-position: center;
+html[lang="en"] .media__sub { font-family: var(--f-logo); font-size: 21px; letter-spacing: 0.02em; }
+.media-featured { display: grid; gap: 16px; }
+@media (min-width: 900px) { .media-featured { grid-template-columns: 1.3fr 1fr 1fr; } }
+.media-card {
+  display: flex; flex-direction: column; gap: 10px; min-height: 260px; padding: clamp(24px, 3vw, 34px);
+  text-decoration: none; border: 1px solid var(--line-strong); background: var(--bg-2);
+  transition: border-color 0.3s, transform 0.3s var(--ease);
 }
-html.eye-enter::before {
-  content: ""; position: fixed; inset: 0; z-index: 400; pointer-events: none;
-  background: var(--eye-color, #000) var(--eye-inside, none) center / cover no-repeat;
-  animation: eye-reveal 1.1s 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards paused;
+.media-card:hover { border-color: var(--copper); transform: translateY(-3px); }
+.media-card__badge {
+  align-self: flex-start; font-family: var(--f-type); font-size: 12.5px; letter-spacing: 0.16em;
+  color: var(--bg); background: var(--copper-hi); padding: 3px 10px;
 }
-html.eye-enter.eye-ready::before { animation-play-state: running; }
-@keyframes eye-reveal {
-  0% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.12); }
+.media-card__outlet { font-family: var(--f-logo); font-size: clamp(36px, 4.4vw, 56px); line-height: 1.05; letter-spacing: 0.04em; color: var(--text); margin-top: 6px; }
+.media-card__title { font-family: var(--f-head); font-size: 15.5px; line-height: 1.75; letter-spacing: 0.04em; color: var(--text); }
+.media-card__note { margin-top: auto; font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+.media-card--tv { background: linear-gradient(150deg, rgba(200,132,91,0.18), var(--bg-2) 60%); border-color: rgba(200,132,91,0.45); }
+.media-card--tv .media-card__outlet { font-family: var(--f-type); font-weight: 700; font-size: clamp(48px, 6vw, 76px); color: var(--copper-hi); }
+.media-card--tv .media-card__title { font-size: 18px; }
+
+.video-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.video-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none; }
+.video-card__thumb { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #000; border: 1px solid var(--line); }
+.video-card__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), opacity 0.3s; opacity: 0.85; }
+.video-card__thumb::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px;
+  border-radius: 50%; background: rgba(10,10,11,0.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='%23e9e5df'/%3E%3C/svg%3E") center / 22px no-repeat;
+  border: 1px solid rgba(255,255,255,0.3);
 }
-@media (prefers-reduced-motion: reduce) {
-  html.eye-enter::before { animation-duration: 0.01s; }
+.video-card:hover .video-card__thumb img { transform: scale(1.04); opacity: 1; }
+.video-card__title { font-size: 14.5px; line-height: 1.7; color: var(--text); }
+.video-card:hover .video-card__title { color: var(--accent-hi); }
+
+/* smooth page transitions (browsers that support cross-document view transitions) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.45s; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* Kagane: the call that gives the work its name */
+.statement__call {
+  font-family: var(--f-type); font-weight: 700; font-size: clamp(30px, 5vw, 58px); line-height: 1.3;
+  letter-spacing: 0.04em; color: #f1ede7; margin: 0 0 28px;
+}
+html[lang="ja"] .statement__call { font-family: var(--f-head); font-weight: 500; letter-spacing: 0.12em; line-height: 1.5; }
+
+/* Kagane: title before / after */
+.title-flip { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (min-width: 760px) { .title-flip { grid-template-columns: 1fr 1fr; } }
+.title-flip__side { background: var(--bg); padding: clamp(28px, 4vw, 48px); }
+.title-flip__side--after { background: linear-gradient(150deg, rgba(200,132,91,0.14), var(--bg) 70%); }
+.title-flip__when { font-family: var(--f-type); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+html[lang="ja"] .title-flip__when { font-family: var(--f-head); letter-spacing: 0.2em; }
+.title-flip__phrase { font-family: var(--f-type); font-weight: 700; font-size: clamp(28px, 3.6vw, 42px); letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px; }
+.title-flip__who { color: var(--text-2); margin: 0; }
+.origin { border-left: 1px solid var(--accent); padding-left: clamp(20px, 3vw, 32px); }
+.origin__label { font-family: var(--f-head); font-size: 18px; letter-spacing: 0.1em; color: var(--accent-hi); }
+html[lang="en"] .origin__label { font-family: var(--f-logo); font-size: 22px; letter-spacing: 0.02em; }
+
+/* keep card text readable on small screens */
+@media (max-width: 760px) {
+  .work::before { background: linear-gradient(180deg, rgba(10,10,11,0.15) 0%, rgba(10,10,11,0.55) 30%, rgba(10,10,11,0.93) 58%, rgba(10,10,11,0.97) 100%); }
 }
