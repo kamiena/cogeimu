@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime:wght@400;700&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/budoux-ja.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
   <script type="application/ld+json">
   {
@@ -65,22 +66,18 @@
 <main id="main">
 
   <!-- ============ HERO (key visual) ============ -->
-  <section class="work-hero">
-    <p class="work-hero__pre">PRJ CÔGEIMU</p>
-    <h1 class="work-hero__title">Are you there?</h1>
-    <img class="work-hero__visual" src="../assets/img/kagane/hero.webp" width="1400" height="1129" alt="銅の鍛金で作られた少女の像 カガネ" data-alt-ja="銅の鍛金で作られた少女の像 カガネ" data-alt-en="Kagane, a girl hammered from copper" fetchpriority="high">
-    <p class="work-hero__meta">
-      <span><b>02</b> Kagane</span>
-      <span>Copper / Tankin</span>
-      <span>Interactive video game</span>
-    </p>
+  <section class="work-hero work-hero--kv">
+    <p class="work-hero__pre">PRJ CÔGEIMU — 02</p>
+    <h1 class="visually-hidden">ARE YOU THERE?</h1>
+    <img class="work-hero__kv" src="../assets/img/kagane/hero-kv.webp" width="1200" height="1162" alt="ARE YOU THERE? — 銅の鍛金で作られた少女の像 カガネ" data-alt-ja="ARE YOU THERE? — 銅の鍛金で作られた少女の像 カガネ" data-alt-en="ARE YOU THERE? — Kagane, a girl hammered from copper" fetchpriority="high">
+    <p class="work-hero__material">Copper</p>
   </section>
 
   <!-- ============ STATEMENT ============ -->
   <section class="section section--bg">
     <div class="section__bg" style="background-image: url('../assets/img/kagane/ingame-cave-copper.webp')" aria-hidden="true"></div>
     <div class="wrap--narrow reveal">
-      <p class="statement__call" lang="ja">「そこにいるの？<br>一緒に遊ぼう？」</p>
+      <p class="statement__call" lang="ja">「そこにいるの？<br>　一緒に遊ぼう？」</p>
       <p class="statement__call" lang="en">“Are you there?<br>Want to play?”</p>
       <p class="statement" lang="ja">と語りかける銅の少女像”カガネ”。
 あなたは銅の少女と向き合い、目と目を合わせ、頬に触れて体温を伝えながら、原初的なビデオゲームで遊ぶ。
@@ -99,7 +96,7 @@ And somehow, unmistakably, Kagane is there.</p>
   <section class="section" id="concept">
     <div class="wrap">
       <div class="concept-block reveal">
-        <p class="sec-head__label" style="justify-content: center">Concept</p>
+        <p class="sec-head__label sec-head__label--center">Concept</p>
         <p class="concept__from"><span lang="ja">作品“で”遊ぶ作品</span><span lang="en">An artwork you play on</span></p>
         <p class="concept__to"><span lang="ja">作品“<em>と</em>”遊ぶ作品</span><span lang="en">An artwork you play <em>with</em></span></p>
         <p class="concept__theme"><span class="concept__theme-label">Theme</span><span lang="ja">対話</span><span lang="en">Dialogue</span></p>
@@ -131,23 +128,14 @@ And somehow, unmistakably, Kagane is there.</p>
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">About the title</p>
-        <h2><span lang="ja">「ARE YOU THERE?」という名前</span><span lang="en">Why “ARE YOU THERE?”</span></h2>
+        <h2><span lang="ja">「ARE YOU THERE?」<br class="sp">という名前</span><span lang="en">Why “ARE YOU THERE?”</span></h2>
       </header>
 
-      <div class="title-flip reveal">
-        <div class="title-flip__side">
-          <p class="title-flip__when"><span lang="ja">遊ぶ前</span><span lang="en">Before you play</span></p>
-          <p class="title-flip__phrase">Are you there?</p>
-          <p class="title-flip__who"><span lang="ja">少女が、あなたに問いかける。</span><span lang="en">She asks it of you.</span></p>
-        </div>
-        <div class="title-flip__side title-flip__side--after">
-          <p class="title-flip__when"><span lang="ja">遊んだあと</span><span lang="en">After you play</span></p>
-          <p class="title-flip__phrase">Are you there?</p>
-          <p class="title-flip__who"><span lang="ja">あなたが、少女に感じている。</span><span lang="en">You feel it about her.</span></p>
-        </div>
-      </div>
-
-      <div class="split" style="margin-top: clamp(48px, 7vw, 80px)">
+      <p class="lead reveal" style="max-width: 36em">
+        <span lang="ja">遊ぶ前は、少女があなたに「Are you there?」と問いかける。<br>遊び終えたあとには、あなたが少女に「Are you there?」と感じている。</span>
+        <span lang="en">Before you play, she asks you: “Are you there?” After you play, you find yourself feeling it about her: “Are you there?”</span>
+      </p>
+      <div class="split" style="margin-top: clamp(40px, 6vw, 64px)">
         <div class="reveal">
           <p>
             <span lang="ja">対話やコミュニケーションをもじった名前や、考察の余地がある名前も考えました。けれど最後は素直に、「作品を遊び終えたあとに、こんな気持ちになってほしい」という願いを、そのままタイトルにしました。ぱっと見は、少女がこちらに語りかけてくる言葉。遊び終えたあとには、自分の体験とともに、もう一段深く意味が届く ── そんな名前を目指しています。</span>
@@ -210,7 +198,7 @@ And somehow, unmistakably, Kagane is there.</p>
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">The sculpture</p>
-        <h2><span lang="ja">外装 ─ 覗き込み、目を合わせる</span><span lang="en">The sculpture — lean in, meet her eyes</span></h2>
+        <h2><span lang="ja">外装 ─<br class="sp"> 覗き込み、目を合わせる</span><span lang="en">The sculpture — lean in, meet her eyes</span></h2>
       </header>
       <div class="split split--wide-right">
         <ul class="bullets reveal">
@@ -235,7 +223,7 @@ And somehow, unmistakably, Kagane is there.</p>
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">Interface</p>
-        <h2><span lang="ja">頬に触れる ─ 体温が、入力になる</span><span lang="en">Touch her cheeks — body heat as input</span></h2>
+        <h2><span lang="ja">頬に触れる ─<br class="sp"> 体温が、入力になる</span><span lang="en">Touch her cheeks — body heat as input</span></h2>
       </header>
       <div class="split split--center">
         <div class="reveal">
@@ -286,7 +274,7 @@ And somehow, unmistakably, Kagane is there.</p>
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">The game</p>
-        <h2><span lang="ja">勝つためではなく、続けるためのピンポン</span><span lang="en">Pong — played not to win, but to keep going</span></h2>
+        <h2><span lang="ja">勝つためではなく、<br class="sp">続けるためのピンポン</span><span lang="en">Pong — played not to win, but to keep going</span></h2>
       </header>
     </div>
     <!-- 案B：全幅＋周辺減光（ビネット）で、覗き込んだ暗さを表現 -->
@@ -315,12 +303,12 @@ And somehow, unmistakably, Kagane is there.</p>
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">World &amp; Sound</p>
-        <h2><span lang="ja">銅でできた洞窟と、鍛金の音</span><span lang="en">A cave of copper, the sound of the hammer</span></h2>
+        <h2><span lang="ja">銅でできた洞窟と、<br class="sp">鍛金の音</span><span lang="en">A cave of copper, the sound of the hammer</span></h2>
       </header>
       <div class="cards cards--2 reveal">
         <div class="card">
           <span class="card__label">World</span>
-          <h3><span lang="ja">色を変えていく銅が、世界の色になる</span><span lang="en">Copper’s changing colours become the world’s palette</span></h3>
+          <h3><span lang="ja">色を変えていく銅が、<br class="sp">世界の色になる</span><span lang="en">Copper’s changing colours become the world’s palette</span></h3>
           <p><span lang="ja">洞窟のデザインは、作品の素材である「銅」そのものがモチーフ。銅は空気や水と化学反応を起こし、赤みを帯びた銅色から緑青の青緑まで、さまざまな色に姿を変えていきます。その“色を変えた銅”を洞窟の色彩テーマとし、緑青のデザインを随所に取り入れています。</span><span lang="en">The cave is modelled on copper itself — the very material of the work. Copper reacts with air and water and changes colour, from its reddish metal to the blue-green of verdigris and beyond. Those transformed coppers form the cave’s palette, with verdigris designs throughout.</span></p>
         </div>
         <div class="card">
