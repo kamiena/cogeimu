@@ -203,6 +203,7 @@ html[lang="en"] .sec-head h2 { font-family: var(--f-logo); font-size: clamp(32px
 html[lang="en"] .lead { font-family: var(--f-logo); font-size: clamp(22px, 2.4vw, 28px); line-height: 1.5; letter-spacing: 0.01em; }
 
 .muted { color: var(--muted); }
+.nw { white-space: nowrap; } /* keep a word together on one line */
 .note { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
 .note::before { content: "※ "; }
 html[lang="en"] .note::before { content: "* "; }
@@ -526,6 +527,8 @@ html[lang="ja"] .statement { font-family: var(--f-head); letter-spacing: 0.1em; 
   content: ""; display: block; width: 28px; height: 1px; background: var(--accent); margin-bottom: 16px;
 }
 .steps h3 { font-family: var(--f-head); font-weight: 500; font-size: 18px; letter-spacing: 0.08em; margin: 0 0 8px; }
+/* steps that carry an English label use the label instead of the copper rule */
+.steps--labeled > li::before { display: none; }
 .steps p { color: var(--text-2); }
 
 .figure { margin: 0; }
@@ -721,8 +724,11 @@ html[lang="ja"] .title-flip__when { font-family: var(--f-head); letter-spacing: 
 .title-flip__phrase { font-family: var(--f-type); font-weight: 700; font-size: clamp(28px, 3.6vw, 42px); letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 10px; }
 .title-flip__who { color: var(--text-2); margin: 0; }
 .origin { border-left: 1px solid var(--accent); padding-left: clamp(20px, 3vw, 32px); }
-.origin__label { font-family: var(--f-head); font-size: 18px; letter-spacing: 0.1em; color: var(--accent-hi); }
-html[lang="en"] .origin__label { font-family: var(--f-logo); font-size: 22px; letter-spacing: 0.02em; }
+.origin h3 {
+  font-family: var(--f-head); font-weight: 500; font-size: 18px; letter-spacing: 0.08em;
+  line-height: 1.6; margin: 0 0 12px;
+}
+html[lang="en"] .origin h3 { letter-spacing: 0.01em; }
 
 /* keep card text readable on small screens */
 @media (max-width: 760px) {
