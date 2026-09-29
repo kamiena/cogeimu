@@ -37,7 +37,8 @@
 - ページ遷移の特殊演出（目に入るズーム等）は使わない。通常の遷移（View Transitions のクロスフェード）のみ。
 
 - **スマホ表示を最優先**で確認する（閲覧の大半がスマホ）。日本語の改行は BudouX（assets/js/budoux-ja.js）で文節単位にし、1〜2文字だけ次の行に落ちる箇所は `<br class="sp">`（スマホのみ有効な改行）で整える。
-- 作品ページのヒーローは全作品で同じ構成・位置：「PRJ CÔGEIMU — 0X」→ 作品名（YUKI／KAGANE）→ タイトル（NO TITLE (PROTOTYPE)／ARE YOU THERE?）→ 画像。素材名は書かない。画像の端はグラデーションで溶かし、パキッとした境目を作らない。
+- 作品ページのヒーロー：左上に「PRJ CÔGEIMU 0X 作品名」を1行、画像は全画面。Yuki は中央に「NO TITLE」＋小さく「PROTOTYPE」。Kagane はキービジュアルの「ARE YOU THERE?」をそのまま使う（文字を重ねない）。素材名は書かない。
+- ページ下の次作品リンクには作品の顔の小さなサムネイルを付ける。
 - 画像のサイズ指定は width＋aspect-ratio＋height:auto のみ（height:100% を使わない。iPhone Safari で崩れるため）。
 - 中央揃えの見出しラベルは両側に線、左揃えは左側だけに線。
 
