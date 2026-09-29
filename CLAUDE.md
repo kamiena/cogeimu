@@ -36,6 +36,10 @@
 - **未発表情報**：02 Kagane の CV は発表まで「？？？」表記（名前をコード・コメント・コミットに書かない）。Anima Ludens（フランス・アルル）出展は、index.html と works/kagane.html に HTML コメントで用意済み。発表後にコメントを外して公開する。
 - ページ遷移の特殊演出（目に入るズーム等）は使わない。通常の遷移（View Transitions のクロスフェード）のみ。
 
+- **スマホ表示を最優先**で確認する（閲覧の大半がスマホ）。日本語の改行は BudouX（assets/js/budoux-ja.js）で文節単位にし、1〜2文字だけ次の行に落ちる箇所は `<br class="sp">`（スマホのみ有効な改行）で整える。
+- 作品ページのヒーローは「PRJ CÔGEIMU — 01／02」＋作品名＋素材名（Aluminium／Copper）だけ。
+- 中央揃えの見出しラベルは両側に線、左揃えは左側だけに線。
+
 ## トップページの構成（順番）
 
-Hero → Project → A new genre（次のゲームジャンル）→ One of a kind（ポジション・一点物）→ Works（各作品に CV 表記）→ Record → Team（制作メンバー → 指導者・サポーター → 主催・助成ロゴ）→ Contact
+Hero → About the project → A new genre（次のゲームジャンル）→ One of a kind（ポジション・一点物）→ Works（各作品に CV 表記）→ Team & Credits（制作メンバー → スーパーバイザー等 → 主催・助成ロゴ）→ Record（展示・メディア）→ Contact

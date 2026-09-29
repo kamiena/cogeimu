@@ -46,16 +46,29 @@
   onScroll();
 
   var menuBtn = document.querySelector(".menu-btn");
+  function setMenu(open) {
+    document.body.classList.toggle("menu-open", open);
+    document.documentElement.classList.toggle("no-scroll", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+  }
   if (menuBtn) {
     menuBtn.addEventListener("click", function () {
-      var open = document.body.classList.toggle("menu-open");
-      menuBtn.setAttribute("aria-expanded", String(open));
+      setMenu(!document.body.classList.contains("menu-open"));
     });
     document.querySelectorAll(".nav__links a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        document.body.classList.remove("menu-open");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", function () { setMenu(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setMenu(false);
+    });
+  }
+
+  // ---- Japanese line breaking ---------------------------------------------
+  // BudouX inserts break opportunities between natural phrases so Japanese
+  // text never wraps in the middle of a word (e.g. a lone "る。" on its own line).
+  if (window.budouxJa) {
+    document.querySelectorAll("main, footer").forEach(function (el) {
+      try { window.budouxJa.applyToElement(el); } catch (e) { /* keep default wrapping */ }
     });
   }
 
