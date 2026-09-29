@@ -1018,3 +1018,8 @@ main, main *, footer, footer * { overflow-wrap: break-word !important; }
   .work-hero--kv { display: block; text-align: center; }
   .work-hero--kv .work-hero__kvimg { display: inline-block; vertical-align: bottom; }
 }
+
+/* artist's message */
+.message p { color: var(--text-2); }
+.message__sign { margin-top: 32px; text-align: right; font-family: var(--f-head); font-size: 15px; letter-spacing: 0.08em; color: var(--text-2); }
+html[lang="en"] .message__sign { font-family: var(--f-logo); font-style: italic; font-size: 17px; letter-spacing: 0.02em; }
