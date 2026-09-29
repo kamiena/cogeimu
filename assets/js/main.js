@@ -63,6 +63,94 @@
     });
   }
 
+  // ---- notes: the second layer of a work page ----------------------------
+  // The page itself stays short; each note (#sculpture, #gameplay ...) opens
+  // over it. Without JS the notes simply follow the page as normal sections.
+  var notesEl = document.querySelector(".notes");
+  if (notesEl) {
+    var noteItems = Array.prototype.slice.call(notesEl.querySelectorAll(".notes__item"));
+    var ids = noteItems.map(function (n) { return n.id; });
+    var crumb = notesEl.querySelector(".notes__crumb-label");
+    var closeBtn = notesEl.querySelector(".notes__close");
+    var opener = null, pushed = false;
+
+    notesEl.setAttribute("role", "dialog");
+    notesEl.setAttribute("aria-modal", "true");
+    notesEl.setAttribute("aria-hidden", "true");
+
+    // previous / next note at the foot of each one
+    noteItems.forEach(function (n, i) {
+      var nav = document.createElement("nav");
+      nav.className = "note-nav";
+      nav.setAttribute("aria-label", "Notes");
+      [noteItems[i - 1], noteItems[i + 1]].forEach(function (t, k) {
+        if (!t) { nav.appendChild(document.createElement("span")); return; }
+        var a = document.createElement("a");
+        a.href = "#" + t.id;
+        if (k === 1) a.className = "note-nav__next";
+        var title = t.querySelector("h2").innerHTML.replace(/<br[^>]*>/g, "");
+        a.innerHTML = "<small>" + (k === 0 ? "← " : "") + t.getAttribute("data-label") + (k === 1 ? " →" : "") + "</small><span>" + title + "</span>";
+        nav.appendChild(a);
+      });
+      var wraps = n.querySelectorAll(".wrap");
+      wraps[wraps.length - 1].appendChild(nav);
+    });
+
+    var show = function (id) {
+      var found = false;
+      noteItems.forEach(function (n) {
+        var on = n.id === id;
+        n.hidden = !on;
+        if (on) { found = true; if (crumb) crumb.textContent = n.getAttribute("data-label"); }
+      });
+      if (!found) return;
+      notesEl.classList.add("is-open");
+      notesEl.setAttribute("aria-hidden", "false");
+      root.classList.add("no-scroll");
+      notesEl.scrollTop = 0;
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
+    };
+    var hide = function () {
+      notesEl.classList.remove("is-open");
+      notesEl.setAttribute("aria-hidden", "true");
+      root.classList.remove("no-scroll");
+      pushed = false;
+      if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+    };
+    var route = function () {
+      var id = decodeURIComponent(location.hash.slice(1));
+      if (ids.indexOf(id) >= 0) show(id);
+      else if (notesEl.classList.contains("is-open")) hide();
+    };
+    var close = function () {
+      if (pushed) { history.back(); return; }
+      history.replaceState(null, "", location.pathname + location.search);
+      hide();
+    };
+
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute("href").slice(1);
+      if (ids.indexOf(id) < 0) return;
+      e.preventDefault();
+      if (notesEl.classList.contains("is-open")) {
+        history.replaceState({ note: id }, "", "#" + id);
+      } else {
+        opener = a;
+        history.pushState({ note: id }, "", "#" + id);
+        pushed = true;
+      }
+      show(id);
+    });
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && notesEl.classList.contains("is-open")) close();
+    });
+    window.addEventListener("popstate", route);
+    route();
+  }
+
   // ---- Japanese line breaking ---------------------------------------------
   // BudouX inserts break opportunities between natural phrases so Japanese
   // text never wraps in the middle of a word (e.g. a lone "る。" on its own line).
