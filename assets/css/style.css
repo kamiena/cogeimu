@@ -534,7 +534,7 @@ html[lang="ja"] .statement { font-family: var(--f-head); letter-spacing: 0.1em; 
 
 .gallery { display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } .gallery--lead > :first-child { grid-column: span 2; grid-row: span 2; } }
-.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; filter: saturate(0.9); transition: filter 0.4s; }
+.gallery img { width: 100%; height: auto; object-fit: cover; aspect-ratio: 16 / 9; filter: saturate(0.9); transition: filter 0.4s; }
 .gallery img:hover { filter: saturate(1.05); }
 
 .callout {
@@ -645,20 +645,12 @@ html[lang="en"] .concept__theme { font-family: var(--f-logo); letter-spacing: 0.
   mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%);
 }
 
-.portraits { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
-.portraits img { width: 100%; height: 100%; object-fit: cover; }
-.portraits img:first-child { grid-row: span 2; aspect-ratio: 9 / 14; }
-.portraits img:not(:first-child) { aspect-ratio: 4 / 3; object-position: 50% 30%; }
 
 .duo { display: grid; gap: 8px; margin-top: clamp(40px, 6vw, 64px); }
 @media (min-width: 760px) { .duo { grid-template-columns: 1fr 1fr; } }
 .duo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 
-.process-grid { display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
-.process-grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; }
 @media (min-width: 900px) {
-  .process-grid { grid-template-columns: 0.9fr 1fr 1fr; }
-  .process-grid__tall { grid-row: span 2; aspect-ratio: auto !important; }
 }
 
 /* work card title helper */
@@ -806,11 +798,6 @@ html.no-scroll { overflow: hidden; }
 
   /* image grids: even gutters, no orphan cells */
   .gallery, .process-grid, .portraits, .duo { gap: 6px; }
-  .process-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid__tall { grid-column: 1 / -1; aspect-ratio: 3 / 4 !important; }
-  .portraits { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .portraits img:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 5; object-position: 50% 30%; }
-  .portraits img:not(:first-child) { aspect-ratio: 3 / 4; }
   .gallery--lead > :first-child { grid-column: 1 / -1; }
   .screen-shot { margin-inline: 0; }
   .eye-view { margin-top: 12px; }
@@ -839,3 +826,94 @@ br.sp { display: none; }
   mask-composite: intersect;
 }
 @media (max-width: 760px) { .work-hero--kv .work-hero__kv { width: 100%; } }
+
+/* =========================================================
+   Image grids — sized only by width + aspect-ratio (no percentage heights),
+   so every browser, including iOS Safari, lays them out identically
+   ========================================================= */
+.portraits { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; align-items: start; }
+.portraits img { display: block; width: 100%; height: auto; object-fit: cover; }
+.portraits img:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 5; object-position: 50% 32%; }
+.portraits img:not(:first-child) { aspect-ratio: 3 / 4; object-position: 50% 30%; }
+@media (min-width: 900px) {
+  .portraits { grid-template-columns: repeat(3, 1fr); }
+  .portraits img, .portraits img:first-child, .portraits img:not(:first-child) { grid-column: auto; aspect-ratio: 9 / 16; }
+}
+.process-grid { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; align-items: start; }
+.process-grid img { display: block; width: 100%; height: auto; object-fit: cover; aspect-ratio: 16 / 9; }
+.process-grid .process-grid__tall { grid-column: 1 / -1; aspect-ratio: 16 / 9; object-position: 50% 32%; }
+@media (max-width: 760px) { .portraits, .process-grid { gap: 6px; } }
+.gallery { align-items: start; }
+.gallery--lead > :first-child { aspect-ratio: auto; }
+@media (min-width: 900px) { .gallery--lead > :first-child { aspect-ratio: 16 / 9; } }
+
+/* =========================================================
+   Work page hero — same structure on every work:
+   PRJ CÔGEIMU — 0X / NAME / title / image
+   ========================================================= */
+.work-hero--unified {
+  min-height: auto; padding: clamp(104px, 12vw, 140px) var(--gutter) clamp(24px, 4vw, 48px);
+  justify-content: flex-start;
+}
+.work-hero__head { position: relative; z-index: 2; }
+.work-hero__name {
+  font-family: var(--f-type); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(44px, 9vw, 104px); letter-spacing: 0.1em; line-height: 1; margin: 12px 0 0; padding-left: 0.1em; color: #f1ede7;
+}
+.work-hero__subtitle {
+  font-family: var(--f-type); text-transform: uppercase; color: var(--accent-hi);
+  font-size: clamp(16px, 2.2vw, 24px); letter-spacing: 0.24em; margin: 16px 0 0; padding-left: 0.24em;
+}
+.work-hero__subtitle small { font-size: 0.75em; letter-spacing: 0.16em; color: var(--text-2); }
+.work-hero__img {
+  display: block; width: min(100%, 64svh, 760px); height: auto; margin-top: clamp(8px, 2vw, 20px);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0, #000 8%, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%), linear-gradient(180deg, transparent 0, #000 8%, #000 72%, transparent 100%);
+  mask-composite: intersect;
+}
+.work-hero__img--wide { width: min(100%, 1000px); }
+@media (max-width: 760px) {
+  .work-hero--unified { padding-top: 96px; }
+  .work-hero__img, .work-hero__img--wide { width: 100%; }
+}
+
+/* home work cards: number and name together, material legible */
+.work__head { position: absolute; top: clamp(18px, 2.4vw, 30px); left: clamp(22px, 3vw, 36px); display: flex; align-items: baseline; gap: 12px; }
+.work__head .work__no { position: static; }
+.work__head .work__code {
+  font-family: var(--f-type); font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.9);
+}
+.work__no { text-shadow: 0 2px 16px rgba(0,0,0,0.6); }
+.work__mat {
+  padding: 5px 10px; background: rgba(10,10,11,0.62); border: 1px solid rgba(255,255,255,0.16);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  color: var(--text); font-size: 12px; letter-spacing: 0.22em;
+}
+@media (max-width: 760px) {
+  /* photo fades into the card instead of ending in a hard edge */
+  .work img {
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+  .work::before { display: none; }
+  .work__body { margin-top: -64px; }
+}
+
+/* labels never wrap one character per line */
+.people__label, .sec-head__label, .eyebrow { white-space: nowrap; }
+/* darken the top of work cards so number / name / material stay legible */
+.work::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 150px; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,10,11,0.7) 0%, rgba(10,10,11,0) 100%);
+}
+.work__head .work__code { font-size: 17px; font-weight: 700; color: #f1ede7; }
+.work--yuki .work__no { color: #f1ede7; }
+/* Yuki's portrait is narrower than Kagane's key visual: match their heights */
+.work-hero__img[src*="yuki/card"] { width: min(100%, 52svh, 620px); }
+@media (max-width: 760px) { .work-hero__img[src*="yuki/card"] { width: 82%; } }
+.work-hero__img[src*="yuki/card"] {
+  -webkit-mask-image: radial-gradient(ellipse 50% 52% at 50% 44%, #000 30%, rgba(0,0,0,.6) 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 52% at 50% 44%, #000 30%, rgba(0,0,0,.6) 62%, transparent 100%);
+}
