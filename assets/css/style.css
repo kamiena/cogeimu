@@ -1126,3 +1126,23 @@ html[lang="en"] .contrast__what { font-family: var(--f-logo); font-size: 24px; l
   .mood__axis--sp { display: flex; justify-content: space-between; margin: 0 0 6px; font-size: 13px; }
   .mood__row { gap: 0; }
 }
+
+/* home work cards: text gathered at the foot so her face stays clear */
+.work__body { padding-top: 0; padding-bottom: clamp(18px, 2.4vw, 28px); transition: transform 0.6s var(--ease); }
+.work__title { margin: 0 0 6px; line-height: 1.1; }
+.work__desc { line-height: 1.7; margin: 0; }
+.work__cv { margin-top: 8px; line-height: 1.6; }
+.work__more { margin-top: 10px; }
+.work::before { background: linear-gradient(180deg, rgba(10,10,11,0.1) 0%, rgba(10,10,11,0) 50%, rgba(10,10,11,0.8) 74%, rgba(10,10,11,0.96) 100%); }
+@media (hover: hover) and (min-width: 761px) {
+  /* "View work" stays tucked away until the card is hovered, then the text rises to make room */
+  .work__more { max-height: 0; margin-top: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s var(--ease), margin-top 0.5s var(--ease), opacity 0.4s; }
+  .work:hover .work__more, .work:focus-visible .work__more { max-height: 24px; margin-top: 12px; opacity: 1; }
+}
+
+/* first-layer sections that carry no other heading: the label reads as the title */
+.sec-head__label--title, .sec-head .sec-head__label--title {
+  font-family: var(--f-logo); font-size: clamp(28px, 3.2vw, 40px); line-height: 1.2;
+  letter-spacing: 0.06em; text-transform: none; color: var(--text); gap: 18px; margin-bottom: 22px;
+}
+.sec-head__label--title::before, .sec-head__label--title::after { background: var(--accent); flex-basis: 36px; }
