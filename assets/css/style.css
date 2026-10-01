@@ -1156,9 +1156,9 @@ html[lang="en"] .contrast__what { font-family: var(--f-logo); font-size: 24px; l
 .statement-body--single { max-width: 44em; }
 
 /* first-layer titles: their own accent, apart from white body text and orange labels */
-.theme-kagane { --title-color: #8fc4b3; }  /* verdigris: the colour copper turns */
-.theme-yuki { --title-color: #c7c1ee; }    /* pale lilac from the World of the Heart */
-.sec-head__label--title, .sec-head .sec-head__label--title { color: var(--title-color, var(--text)); }
+.theme-kagane { --title-color: #8fc4b3; }  /* verdigris: the colour copper turns (how-to-play title) */
+/* first-layer titles: the text takes the same colour as its rule (copper for Kagane, ice for Yuki) */
+.sec-head__label--title, .sec-head .sec-head__label--title { color: var(--accent); }
 
 /* work hero code line: tighter, reads as one unit */
 .work-hero__code { letter-spacing: 0.1em; }
@@ -1247,3 +1247,25 @@ html[lang="en"] .play-please h2 { font-family: var(--f-logo); font-size: clamp(2
 .play-tips h3 { margin: 0 0 12px; font-family: var(--f-head); font-weight: 500; font-size: 16px; letter-spacing: 0.06em; color: var(--text); }
 html[lang="en"] .play-tips h3 { font-family: var(--f-logo); font-size: 20px; letter-spacing: 0.01em; }
 .play-tips .bullets li { font-size: 14px; }
+
+/* concept pictures: soft, blurred edges instead of a hard frame */
+.steps__img {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
+}
+/* the in-game picture is a little too vivid beside the photos */
+.steps__img--dim { filter: brightness(0.78) saturate(0.9); }
+
+/* Yuki's spec picture carries the title in the image: show it whole, without the eye-shaped fade */
+.theme-yuki .eye-view__socket img { aspect-ratio: 1; -webkit-mask-image: none; mask-image: none; }
+
+/* phones (iOS Safari): keep the area above the fixed header covered once the page scrolls,
+   so content doesn't show through a gap between the status bar and the header */
+.site-header::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 200px;
+  background: #0a0a0b; opacity: 0; transition: opacity 0.4s; pointer-events: none;
+}
+.site-header.is-scrolled::before { opacity: 1; }
+.menu-open .site-header::before { opacity: 0; }
