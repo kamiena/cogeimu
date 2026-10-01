@@ -21,9 +21,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime:wght@400;700&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261002b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261002c">
   <script src="assets/js/budoux-ja.js" defer></script>
-  <script src="assets/js/main.js?v=20261002b" defer></script>
+  <script src="assets/js/main.js?v=20261002c" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -291,28 +291,18 @@
   </section>
 
   <!-- ============ NEWS ============ -->
-  <!-- newest first. The first 10 show; the rest open with "More" (main.js). Format:
-       <li class="news__item"><p class="news__meta"><time datetime="YYYY-MM-DD">YYYY.MM.DD</time><span class="news__cat">Info / Exhibition / Story</span></p>
-       <div class="news__body"><h3>…</h3><p>…</p></div></li> -->
+  <!-- one line per article, newest first, the latest 10 only. Each article is its own page in news/
+       (copy news/2026-10-01-website.html), and every article is also listed in news/index.html. -->
   <section class="section" id="news">
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-head__label">News</p>
         <h2><span lang="ja">ニュース</span><span lang="en">News</span></h2>
       </header>
-      <ul class="news reveal" data-news>
-        <li class="news__item">
-          <p class="news__meta"><time datetime="2026-10-01">2026.10.01</time><span class="news__cat">Info</span></p>
-          <div class="news__body">
-            <h3><span lang="ja">公式ウェブサイトを公開しました</span><span lang="en">Our official website is now live</span></h3>
-            <p>
-              <span lang="ja">PRJ CÔGEIMU の公式ウェブサイトを公開しました。工芸とゲームを掛け合わせた作品「01 Yuki」と「02 Kagane『ARE YOU THERE?』」の紹介、制作メンバー、これまでの展示やメディア掲載をまとめています。今後はこのニュース欄で、展示・出展のお知らせや、カミエナ・塩見亮介・金子尊の3人による制作の裏話など、新しい情報をお届けしていきます。</span>
-              <span lang="en">The official website of PRJ CÔGEIMU is now online. It brings together our craft × game works, 01 Yuki and 02 Kagane “ARE YOU THERE?”, the team behind them, and our exhibitions and press so far. Here in News, we will share upcoming exhibitions, behind-the-scenes stories from KamiEna, Shiomi Ryosuke and Kaneko Takeru, and other updates as they come.</span>
-            </p>
-          </div>
-        </li>
+      <ul class="news-list reveal">
+        <li><a href="news/2026-10-01-website.html"><time datetime="2026-10-01">2026.10.01</time><span class="news__cat">Info</span><span class="news-list__title"><span lang="ja">公式ウェブサイトを公開しました</span><span lang="en">Our official website is now live</span></span><span class="news-list__arrow" aria-hidden="true">→</span></a></li>
       </ul>
-      <p class="news__more-wrap"><button class="btn news__more" type="button" data-news-more hidden><span lang="ja">もっと見る</span><span lang="en">More</span></button></p>
+      <p class="news-list__all reveal"><a class="btn" href="news/"><span lang="ja">ニュース一覧へ</span><span lang="en">All news</span> <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
