@@ -195,9 +195,9 @@
     var tags = box ? box.getAttribute("data-share-tags") : "";
     var status = document.querySelector("[data-share-status]");
     copyText(tags).then(function () {
-      if (status) status.innerHTML = '<span lang="ja">ハッシュタグをコピーした：' + tags + '</span><span lang="en">Hashtags copied: ' + tags + "</span>";
+      if (status) status.innerHTML = '<span lang="ja">ハッシュタグをコピーしました：' + tags + '</span><span lang="en">Hashtags copied: ' + tags + "</span>";
     }, function () {
-      if (status) status.innerHTML = '<span lang="ja">コピーできなかった。ハッシュタグを長押しでコピーしてほしい。</span><span lang="en">Couldn’t copy. Press and hold the hashtags to copy them.</span>';
+      if (status) status.innerHTML = '<span lang="ja">コピーできませんでした。ハッシュタグを長押ししてコピーしてください。</span><span lang="en">Couldn’t copy. Press and hold the hashtags to copy them.</span>';
     });
   });
 

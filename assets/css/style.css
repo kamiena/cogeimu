@@ -1239,3 +1239,11 @@ html[lang="en"] .play-please h2 { font-family: var(--f-logo); font-size: clamp(2
 .share__btn:hover, .share__btn:focus-visible { border-color: var(--accent); color: var(--accent-hi); }
 .card .share__status { margin: 10px 0 0; min-height: 1.4em; font-size: 13px; color: var(--accent-hi); }
 .card .share__note { margin: 6px 0 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+/* how to play: play time under the lead, the cheek direction, tips for cold or warm cheeks */
+.play-hero__time { margin: 14px 0 0; font-family: var(--f-type); font-size: 13px; letter-spacing: 0.12em; color: var(--text-2); }
+.play-voice__how b { font-weight: 500; font-size: 1.15em; color: var(--accent-hi); }
+.play-tips { margin-top: 20px; padding: 18px clamp(16px, 3vw, 22px) 6px; border-left: 2px solid rgba(200, 132, 91, 0.5); background: rgba(255, 255, 255, 0.02); }
+.play-tips h3 { margin: 0 0 12px; font-family: var(--f-head); font-weight: 500; font-size: 16px; letter-spacing: 0.06em; color: var(--text); }
+html[lang="en"] .play-tips h3 { font-family: var(--f-logo); font-size: 20px; letter-spacing: 0.01em; }
+.play-tips .bullets li { font-size: 14px; }
