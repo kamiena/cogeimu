@@ -80,6 +80,7 @@
 
     // previous / next note at the foot of each one
     noteItems.forEach(function (n, i) {
+      if (noteItems.length < 2) return;
       var nav = document.createElement("nav");
       nav.className = "note-nav";
       nav.setAttribute("aria-label", "Notes");
@@ -149,6 +150,21 @@
     });
     window.addEventListener("popstate", route);
     route();
+  }
+
+  // ---- news (home): the latest 10 always show; "More" opens the older ones ----
+  var newsList = document.querySelector("[data-news]");
+  var newsMore = document.querySelector("[data-news-more]");
+  if (newsList && newsMore) {
+    var older = Array.prototype.slice.call(newsList.children, 10);
+    if (older.length) {
+      older.forEach(function (li) { li.hidden = true; });
+      newsMore.hidden = false;
+      newsMore.addEventListener("click", function () {
+        older.forEach(function (li) { li.hidden = false; });
+        newsMore.hidden = true;
+      });
+    }
   }
 
   // ---- Japanese line breaking ---------------------------------------------

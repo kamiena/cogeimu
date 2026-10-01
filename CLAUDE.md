@@ -97,4 +97,8 @@
 
 ## トップページの構成（順番）
 
-Hero → About the project → Next genre（次のゲームジャンル）→ Positioning（ゲーム × 工芸のポジション・一点物）→ Works（各作品に CV 表記）→ Project members（制作メンバー → スーパーバイザー等 → 主催・助成ロゴ）→ Record（展示・メディア）→ Contact
+Hero → About the project（末尾に「CÔGEIMU についてもっと知る」ボタン）→ Works（各作品に CV 表記）→ Project members（制作メンバー → スーパーバイザー・コーディネーター・サポーター）→ News → Record（展示・メディア）→ 主催・助成ロゴ → Contact
+
+- Next genre（次のゲームジャンル）と Positioning（ゲーム × 工芸のポジション・一点物）は、トップには直接出さない。About の「もっと知る」ボタンから開くオーバーレイ（作品ページの Notes と同じ `.notes` の仕組み、`#more`）にまとめる。
+- News：新しい順に `ul[data-news]` の先頭へ `li.news__item` を足していく（日付・カテゴリ Info / Exhibition / Story・見出し・本文）。常に最新10件を表示し、11件目以降は「もっと見る」で開く（main.js）。展示・出展の決定、3人の制作秘話、新情報などを載せる。ニュースは来場者へのお知らせなので です・ます調で書く。
+- Contact には、展示・出展、作品の購入、取材などの問い合わせ先であることを書く。
