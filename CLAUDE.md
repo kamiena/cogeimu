@@ -84,7 +84,8 @@
 
 ## 訪問者数（トップのフッター）
 
-- GoatCounter（Cookie なし・非商用は無料）を使う。`assets/js/main.js` の `GOATCOUNTER` にサイトコードを入れると、全ページで計測し、トップのフッターに合計（TOTAL）を表示する。空のあいだは何も読み込まず非表示。GoatCounter 側で「Allow adding visitor counts on your website」をオンにしておく。
+- 外部サービスには登録しない方針。カミエナの Google アカウントに置いた Google Apps Script のウェブアプリ（数字を1つ保存するだけ）で数える。`assets/js/main.js` の `COUNTER_URL` にウェブアプリの URL（…/exec）を入れると有効になる。空のあいだは何も送らず非表示。
+- 数え方：どのページでも、1つのブラウザにつき1日1回（localStorage `cogeimu-visit`）`?hit=1` で1増やす。合計はトップのフッターに「VISITORS」としてカウントアップ表示し、誰でも見られる。数字を水増ししたり、初期値を盛ったりはしない。
 
 ## トップページの構成（順番）
 
