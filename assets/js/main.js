@@ -206,7 +206,7 @@
   // Each browser is counted once a day, on whichever page it opens first; the total shows in the home footer.
   // Paste the web app URL (https://script.google.com/macros/s/…/exec) below.
   // Left empty, nothing is sent and the counter stays hidden.
-  var COUNTER_URL = "";
+  var COUNTER_URL = "https://script.google.com/macros/s/AKfycby8Zj10nqZTJkvCth7UsnDoGAbBUBR1isBUNoeLz3i5ebUau0gYp39IwF8Z4RwlHo88/exec";
   if (COUNTER_URL && window.fetch) {
     var counter = document.querySelector("[data-visit-counter]");
     var num = counter && counter.querySelector("[data-visit-count]");
