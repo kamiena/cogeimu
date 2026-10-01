@@ -204,6 +204,8 @@
   // ---- visitor count (a Google Apps Script web app in the project owner's Google account) ----
   // The script keeps one number: "?hit=1" adds one and returns it, a plain call only returns it.
   // Each browser is counted once a day, on whichever page it opens first; the total shows in the home footer.
+  // The hit also says where the visitor came from (the script logs it to a spreadsheet):
+  // ?from=… on the link wins, then the referrer's site; no referrer on the how-to-play page is most likely the QR code.
   // Paste the web app URL (https://script.google.com/macros/s/…/exec) below.
   // Left empty, nothing is sent and the counter stays hidden.
   var COUNTER_URL = "https://script.google.com/macros/s/AKfycby8Zj10nqZTJkvCth7UsnDoGAbBUBR1isBUNoeLz3i5ebUau0gYp39IwF8Z4RwlHo88/exec";
@@ -215,8 +217,30 @@
     var lastVisit = null;
     try { lastVisit = localStorage.getItem("cogeimu-visit"); } catch (err) { /* private mode */ }
     var hit = lastVisit !== today;
+    var visitSource = function () {
+      var from = "", host = "";
+      try { from = new URLSearchParams(location.search).get("from") || ""; } catch (err) { /* old browser */ }
+      try { host = document.referrer ? new URL(document.referrer).hostname : ""; } catch (err) { /* bad referrer */ }
+      var via = [
+        [/^(t\.co|(.+\.)?x\.com|(.+\.)?twitter\.com)$/, "X"],
+        [/(^|\.)instagram\.com$/, "Instagram"],
+        [/(^|\.)facebook\.com$/, "Facebook"],
+        [/(^|\.)youtube\.com$/, "YouTube"],
+        [/(^|\.)line\.me$/, "LINE"],
+        [/(^|\.)google\./, "Google"],
+        [/(^|\.)(bing\.com|yahoo\.co\.jp|yahoo\.com|duckduckgo\.com)$/, "検索（Google 以外）"],
+        [/(^|\.)arsobit\.com$/, "ars●bit"]
+      ];
+      var label = from;
+      if (!label && host === location.hostname) label = "サイト内";
+      for (var i = 0; !label && host && i < via.length; i++) if (via[i][0].test(host)) label = via[i][1];
+      if (!label) label = host || (/\/play\//.test(location.pathname) ? "QR（推定）" : "直接・不明");
+      return "&via=" + encodeURIComponent(label) + "&ref=" + encodeURIComponent(host) +
+        "&page=" + encodeURIComponent(location.pathname.replace(/^\/cogeimu/, "") || "/") +
+        "&lang=" + encodeURIComponent(navigator.language || "");
+    };
     if (hit || num) {
-      fetch(COUNTER_URL + (hit ? "?hit=1" : ""), { cache: "no-store" })
+      fetch(COUNTER_URL + (hit ? "?hit=1" + visitSource() : ""), { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (d) {
           if (hit) { try { localStorage.setItem("cogeimu-visit", today); } catch (err) { /* ignore */ } }
