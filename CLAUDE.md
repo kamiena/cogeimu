@@ -34,6 +34,7 @@
 - プロジェクト説明は「鍛金 × 日本のゲームカルチャーで新しい価値をつくる」視点で書き、少女像だけに絞らない。「アーケード→…→VR の次のジャンルとして CÔGEIMU をつくる」ことを明記する。
 - 活動実績に数字のまとめ（〇件など）の枠は置かない。プレスは記事が実在すると確認できたものだけリンクを付ける。テレビ（NHK）とファミ通・美術手帖は大きなカードで目立たせ、動画（YouTube）と記事一覧を続ける。
 - **未発表情報**：02 Kagane の CV は発表まで「？？？」表記（名前をコード・コメント・コミットに書かない）。Anima Ludens（フランス・アルル）出展は、index.html と works/kagane.html に HTML コメントで用意済み。発表後にコメントを外して公開する。
+- ファビコンはカガネの顔の写真（assets/img/common/favicon-32.png・favicon-192.png・apple-touch-icon.png）。
 - ページ遷移の特殊演出（目に入るズーム等）は使わない。通常の遷移（View Transitions のクロスフェード）のみ。
 
 - **スマホ表示を最優先**で確認する（閲覧の大半がスマホ）。日本語の改行は BudouX（assets/js/budoux-ja.js）で文節単位にし、1〜2文字だけ次の行に落ちる箇所は `<br class="sp">`（スマホのみ有効な改行）で整える。
@@ -50,6 +51,9 @@
 - **1ページ目**：ヒーロー（キービジュアル）→ 作品キャプション → Concept → （Trailer：動画がある作品）→ Statement → Spec → Notes（2階層目への入口の一覧）→ Credits → 次の作品。画像が少なくならないよう、各節に写真を置く。
 - **2階層目（Notes）**：Kagane は Sculpture / Interface / Gameplay / World & Sound / Pranks / Character / Process、Yuki は Gameplay / Emotion / Character / Contrast / Story / Process / Exhibitions などの詳細。1ページ目の一覧から開くオーバーレイ（`.notes` と `.notes__item`、開閉は main.js）。URL は `#sculpture` などで直接開ける。JS がない環境ではページ末尾に普通の節として並ぶ。
 - 1ページ目の定番の節（Concept / Trailer / Statement / Spec / Notes / Credits）は英語の節名だけにし、日本語の見出しを別に作らない。節名は `sec-head__label--title`（大きめの英字見出し）で表示する。
+- 節名の文字色は、横の線と同じ色にそろえる（Kagane は銅のオレンジ、Yuki は水色＝各テーマの `--accent`）。
+- Concept の各画像の下には英語ラベル（Sculpture / Game / Touch など）を付けず、日本語の見出しと本文だけにする。画像の縁はぼかす（`.steps__img` のマスク）。インゲーム画像が鮮やかすぎるときは `.steps__img--dim` で少し暗くする。
+- Yuki の Spec の画像（タイトル文字入りのキービジュアル）は切り抜かず、フェードもかけずに全体を見せる。
 
 ## 文章のトンマナ（Kagane ページが基準。Yuki にも順次そろえる）
 
