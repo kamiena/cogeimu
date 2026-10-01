@@ -201,27 +201,27 @@
     });
   });
 
-  // ---- visitor count (GoatCounter: no cookies, free for non-commercial) ----
-  // Set GOATCOUNTER to the site code chosen at goatcounter.com (e.g. "cogeimu")
-  // and turn on "Allow adding visitor counts on your website" in its settings.
-  // Left empty, nothing is loaded and the counter stays hidden.
-  var GOATCOUNTER = "";
-  if (GOATCOUNTER) {
-    var base = "https://" + GOATCOUNTER + ".goatcounter.com";
-    var gc = document.createElement("script");
-    gc.async = true;
-    gc.src = "https://gc.zgo.at/count.js";
-    gc.setAttribute("data-goatcounter", base + "/count");
-    document.head.appendChild(gc);
-
+  // ---- visitor count (a Google Apps Script web app in the project owner's Google account) ----
+  // The script keeps one number: "?hit=1" adds one and returns it, a plain call only returns it.
+  // Each browser is counted once a day, on whichever page it opens first; the total shows in the home footer.
+  // Paste the web app URL (https://script.google.com/macros/s/…/exec) below.
+  // Left empty, nothing is sent and the counter stays hidden.
+  var COUNTER_URL = "";
+  if (COUNTER_URL && window.fetch) {
     var counter = document.querySelector("[data-visit-counter]");
     var num = counter && counter.querySelector("[data-visit-count]");
-    if (num && window.fetch) {
-      fetch(base + "/counter/TOTAL.json")
+    var d0 = new Date();
+    var today = d0.getFullYear() + "-" + (d0.getMonth() + 1) + "-" + d0.getDate();
+    var lastVisit = null;
+    try { lastVisit = localStorage.getItem("cogeimu-visit"); } catch (err) { /* private mode */ }
+    var hit = lastVisit !== today;
+    if (hit || num) {
+      fetch(COUNTER_URL + (hit ? "?hit=1" : ""), { cache: "no-store" })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (d) {
-          var total = parseInt(String(d.count).replace(/\D/g, ""), 10);
-          if (!total) return;
+          if (hit) { try { localStorage.setItem("cogeimu-visit", today); } catch (err) { /* ignore */ } }
+          var total = parseInt(d.count, 10);
+          if (!num || !total) return;
           counter.hidden = false;
           var fmt = function (n) { return n.toLocaleString("en-US"); };
           var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
