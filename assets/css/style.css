@@ -44,7 +44,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; background-color: var(--bg); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -70,9 +70,12 @@ p:last-child { margin-bottom: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 ::selection { background: var(--accent); color: #0a0a0b; }
 
-/* film grain over everything, like the key visual */
-body::after {
-  content: "";
+/* film grain over everything, like the key visual.
+   A real element (<div class="grain">), not body::after: iOS Safari 26 colours the status bar
+   from the fixed header it finds at the top edge, and it looks past a fixed layer only when that
+   layer is an element of its own with opacity under 0.1 and pointer-events: none.
+   A pseudo-element counts as <body> and hides the header from it. Keep the opacity below 0.1. */
+.grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -107,10 +110,10 @@ html[lang="en"] body [lang="ja"] { display: none !important; }
   transition: background 0.4s, border-color 0.4s, padding 0.4s;
   border-bottom: 1px solid transparent;
 }
+/* opaque and without backdrop-filter: iOS Safari 26 then paints the status bar above it in the same colour
+   (a translucent or blurred header leaves the page showing through up there) */
 .site-header.is-scrolled {
-  background: rgba(10, 10, 11, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--bg);
   border-bottom-color: var(--line);
   padding-block: 12px;
 }
@@ -677,8 +680,7 @@ html[lang="en"] .notes-index__title { letter-spacing: 0.01em; }
 .js .notes__item[hidden] { display: none; }
 .js .notes__bar {
   position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  padding: 14px var(--gutter); background: rgba(10, 10, 11, 0.88); border-bottom: 1px solid var(--line);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  padding: 14px var(--gutter); background: var(--bg); border-bottom: 1px solid var(--line);
 }
 .notes__crumb { margin: 0; font-family: var(--f-type); font-size: 12.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .notes__crumb-label { color: var(--accent); }
@@ -798,14 +800,12 @@ html[lang="en"] .origin h3 { letter-spacing: 0.01em; }
 }
 html[lang="ja"] body { line-break: strict; }
 
-/* menu: the blurred header would otherwise become the containing block of the
-   fixed overlay once the page is scrolled, squashing the menu into the header */
+/* menu: the full-screen menu brings its own dark ground, so the header goes clear over it.
+   Never give the header a backdrop-filter, transform or filter: it would become the containing
+   block of the fixed menu and squash the menu into the header. */
 html.no-scroll { overflow: hidden; }
 .menu-open .site-header,
-.menu-open .site-header.is-scrolled {
-  background: transparent; border-bottom-color: transparent;
-  -webkit-backdrop-filter: none; backdrop-filter: none;
-}
+.menu-open .site-header.is-scrolled { background: transparent; border-bottom-color: transparent; }
 @media (max-width: 820px) {
   .nav__links { height: 100dvh; }
 }
@@ -1260,12 +1260,3 @@ html[lang="en"] .play-tips h3 { font-family: var(--f-logo); font-size: 20px; let
 
 /* Yuki's spec picture carries the title in the image: show it whole, without the eye-shaped fade */
 .theme-yuki .eye-view__socket img { aspect-ratio: 1; -webkit-mask-image: none; mask-image: none; }
-
-/* phones (iOS Safari): keep the area above the fixed header covered once the page scrolls,
-   so content doesn't show through a gap between the status bar and the header */
-.site-header::before {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 200px;
-  background: #0a0a0b; opacity: 0; transition: opacity 0.4s; pointer-events: none;
-}
-.site-header.is-scrolled::before { opacity: 1; }
-.menu-open .site-header::before { opacity: 0; }
