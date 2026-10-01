@@ -152,21 +152,6 @@
     route();
   }
 
-  // ---- news (home): the latest 10 always show; "More" opens the older ones ----
-  var newsList = document.querySelector("[data-news]");
-  var newsMore = document.querySelector("[data-news-more]");
-  if (newsList && newsMore) {
-    var older = Array.prototype.slice.call(newsList.children, 10);
-    if (older.length) {
-      older.forEach(function (li) { li.hidden = true; });
-      newsMore.hidden = false;
-      newsMore.addEventListener("click", function () {
-        older.forEach(function (li) { li.hidden = false; });
-        newsMore.hidden = true;
-      });
-    }
-  }
-
   // ---- Japanese line breaking ---------------------------------------------
   // BudouX inserts break opportunities between natural phrases so Japanese
   // text never wraps in the middle of a word (e.g. a lone "る。" on its own line).
