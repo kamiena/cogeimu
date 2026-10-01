@@ -174,6 +174,33 @@
   }
 
 
+  // ---- share: copy the hashtags ------------------------------------------
+  // X takes hashtags in its post link; Instagram cannot pre-fill a caption,
+  // so its button copies them first and then opens Instagram as a normal link.
+  var copyText = function (text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (ok, ng) {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy") ? ok() : ng(); } catch (err) { ng(err); }
+      document.body.removeChild(ta);
+    });
+  };
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-share-copy]");
+    if (!el) return;
+    var box = el.closest("[data-share]");
+    var tags = box ? box.getAttribute("data-share-tags") : "";
+    var status = document.querySelector("[data-share-status]");
+    copyText(tags).then(function () {
+      if (status) status.innerHTML = '<span lang="ja">ハッシュタグをコピーした：' + tags + '</span><span lang="en">Hashtags copied: ' + tags + "</span>";
+    }, function () {
+      if (status) status.innerHTML = '<span lang="ja">コピーできなかった。ハッシュタグを長押しでコピーしてほしい。</span><span lang="en">Couldn’t copy. Press and hold the hashtags to copy them.</span>';
+    });
+  });
+
   // ---- visitor count (GoatCounter: no cookies, free for non-commercial) ----
   // Set GOATCOUNTER to the site code chosen at goatcounter.com (e.g. "cogeimu")
   // and turn on "Allow adding visitor counts on your website" in its settings.

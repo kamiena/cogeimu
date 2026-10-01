@@ -39,6 +39,10 @@
   <section class="play-hero">
     <img class="play-hero__img" src="../assets/img/kagane/hero-face.webp" width="1200" height="986" alt="銅の鍛金でつくられた少女の像 カガネ" data-alt-ja="銅の鍛金でつくられた少女の像 カガネ" data-alt-en="Kagane, a girl hammered from copper" fetchpriority="high">
     <div class="wrap play-hero__text">
+      <div class="lang-toggle lang-toggle--big" role="group" aria-label="言語 / Language">
+        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
       <p class="play-hero__work">PRJ CÔGEIMU <span>02</span> <b>Kagane</b></p>
       <h1 class="play-hero__title">How to play</h1>
       <p class="play-hero__name"><span lang="ja">ARE YOU THERE? の遊び方</span><span lang="en">ARE YOU THERE?</span></p>
@@ -80,9 +84,19 @@
         <li>
           <span class="card__label">Rally</span>
           <h2><span lang="ja">ラリーが続くほど、カガネは楽しくなる</span><span lang="en">The longer the rally, the more fun she has</span></h2>
-          <p><span lang="ja">ラリーが続くほど、カガネはどんどん楽しくなっていく。ときには、いたずらを仕掛けてくるかもしれない。</span><span lang="en">The longer the rally lasts, the more fun Kagane has. Now and then, she may play a prank or two on you.</span></p>
+          <p><span lang="ja">ラリーが続くほど、カガネはどんどん楽しくなっていく。ときには、いたずらを仕掛けてくるかもしれない。1ゲームは5点マッチ。カガネが楽しんでいると、7点、11点へと延びていく。</span><span lang="en">The longer the rally lasts, the more fun Kagane has. Now and then, she may play a prank or two on you. A game is played to 5 points, and if Kagane is enjoying herself, it stretches to 7, then 11.</span></p>
         </li>
       </ol>
+
+      <div class="play-please">
+        <span class="card__label">Please</span>
+        <h2><span lang="ja">遊ぶときのお願い</span><span lang="en">A few requests</span></h2>
+        <ul class="bullets">
+          <li><span lang="ja">この作品は、触れて遊んでよい作品。頬にはやさしく手を添え、強く押したり、叩いたりしない。</span><span lang="en">This is an artwork you are meant to touch. Rest your hands gently on her cheeks; please don’t press hard or tap.</span></li>
+          <li><span lang="ja">遊べるのは1人ずつ。遊び終えたら、<span class="nw">次の人に席を譲る。</span></span><span lang="en">One player at a time. When you finish, please give your seat to the next person.</span></li>
+          <li><span lang="ja">困ったときは、近くの会場スタッフに声をかける。</span><span lang="en">If anything goes wrong, please ask the venue staff.</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -97,8 +111,16 @@
         <div class="card">
           <span class="card__label">Photo &amp; Share</span>
           <h3><span lang="ja">撮影と SNS への投稿</span><span lang="en">Photos and social media</span></h3>
-          <p><span lang="ja">会場で撮影が禁止されていなければ、本作は撮影も SNS への投稿も自由。ほかの作品が写り込まないよう気をつけて、ハッシュタグをつけてシェアしてもらえるとうれしい。</span><span lang="en">Unless the venue prohibits photography, you are free to photograph this work and share it online. Please keep other works out of the frame, and add the hashtag when you share.</span></p>
-          <p class="play-hashtag">#COGEIMU</p>
+          <p><span lang="ja">会場で撮影が禁止されていなければ、本作は撮影も SNS への投稿も自由。ほかの作品が写り込まないよう気をつけて、ハッシュタグをつけてシェアしてもらえるとうれしい。</span><span lang="en">Unless the venue prohibits photography, you are free to photograph this work and share it online. Please keep other works out of the frame, and add the hashtags when you share.</span></p>
+          <p class="play-hashtag">#CÔGEIMU #Kagane</p>
+          <div class="share" data-share data-share-tags="#CÔGEIMU #Kagane">
+            <a class="share__btn" lang="ja" href="https://x.com/intent/tweet?text=PRJ%20C%C3%94GEIMU%2002%20Kagane%E3%80%8CARE%20YOU%20THERE%3F%E3%80%8D&amp;url=https%3A%2F%2Fkamiena.github.io%2Fcogeimu%2Fworks%2Fkagane.html&amp;hashtags=C%C3%94GEIMU,Kagane" target="_blank" rel="noopener">X でポスト</a>
+            <a class="share__btn" lang="en" href="https://x.com/intent/tweet?text=PRJ%20C%C3%94GEIMU%2002%20Kagane%20%E2%80%9CARE%20YOU%20THERE%3F%E2%80%9D&amp;url=https%3A%2F%2Fkamiena.github.io%2Fcogeimu%2Fworks%2Fkagane.html&amp;hashtags=C%C3%94GEIMU,Kagane" target="_blank" rel="noopener">Post on X</a>
+            <a class="share__btn" href="https://www.instagram.com/" target="_blank" rel="noopener" data-share-copy>Instagram</a>
+            <button class="share__btn" type="button" data-share-copy><span lang="ja">タグをコピー</span><span lang="en">Copy tags</span></button>
+          </div>
+          <p class="share__status" role="status" aria-live="polite" data-share-status></p>
+          <p class="share__note"><span lang="ja">X はハッシュタグ入りの投稿画面が開く。Instagram は投稿文を事前に入れられないため、ハッシュタグをコピーしてから開く。投稿画面で貼り付けて使ってほしい。</span><span lang="en">X opens with the hashtags already in your post. Instagram can’t pre-fill a caption, so the hashtags are copied first: paste them into your post.</span></p>
         </div>
       </div>
     </div>

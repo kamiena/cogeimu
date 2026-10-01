@@ -1218,3 +1218,24 @@ html[lang="en"] .play-steps h2 { font-family: var(--f-logo); font-size: clamp(24
 .visit-counter__label { font-family: var(--f-type); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
 .visit-counter__num { font-family: var(--f-logo); font-size: 26px; letter-spacing: 0.04em; color: var(--text); font-variant-numeric: lining-nums tabular-nums; }
 .play-cta { margin: clamp(32px, 5vw, 48px) 0 0; }
+
+/* how to play: a larger language switch in the page itself (synced with the header one) */
+.lang-toggle--big { margin: 0 0 22px; font-size: 14px; letter-spacing: 0.06em; background: rgba(10, 10, 11, 0.6); }
+.lang-toggle--big button { padding: 8px 18px; color: var(--text-2); }
+.lang-toggle--big button[aria-pressed="true"] { color: var(--bg); }
+
+/* how to play: requests before playing */
+.play-please { margin-top: clamp(36px, 6vw, 56px); }
+.play-please h2 { margin: 0 0 14px; font-family: var(--f-head); font-weight: 500; font-size: clamp(19px, 2.4vw, 22px); line-height: 1.6; letter-spacing: 0.06em; }
+html[lang="en"] .play-please h2 { font-family: var(--f-logo); font-size: clamp(24px, 3vw, 28px); line-height: 1.3; letter-spacing: 0.01em; }
+
+/* how to play: share buttons */
+.share { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; margin-top: 14px; }
+.share__btn {
+  appearance: none; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: none; color: var(--text); text-decoration: none;
+  font-family: var(--f-type); font-size: 13px; letter-spacing: 0.08em; transition: border-color 0.3s, color 0.3s;
+}
+.share__btn:hover, .share__btn:focus-visible { border-color: var(--accent); color: var(--accent-hi); }
+.card .share__status { margin: 10px 0 0; min-height: 1.4em; font-size: 13px; color: var(--accent-hi); }
+.card .share__note { margin: 6px 0 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
