@@ -174,6 +174,51 @@
   }
 
 
+  // ---- visitor count (GoatCounter: no cookies, free for non-commercial) ----
+  // Set GOATCOUNTER to the site code chosen at goatcounter.com (e.g. "cogeimu")
+  // and turn on "Allow adding visitor counts on your website" in its settings.
+  // Left empty, nothing is loaded and the counter stays hidden.
+  var GOATCOUNTER = "";
+  if (GOATCOUNTER) {
+    var base = "https://" + GOATCOUNTER + ".goatcounter.com";
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter", base + "/count");
+    document.head.appendChild(gc);
+
+    var counter = document.querySelector("[data-visit-counter]");
+    var num = counter && counter.querySelector("[data-visit-count]");
+    if (num && window.fetch) {
+      fetch(base + "/counter/TOTAL.json")
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          var total = parseInt(String(d.count).replace(/\D/g, ""), 10);
+          if (!total) return;
+          counter.hidden = false;
+          var fmt = function (n) { return n.toLocaleString("en-US"); };
+          var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (reduce || !("IntersectionObserver" in window)) { num.textContent = fmt(total); return; }
+          num.textContent = fmt(0);
+          // count up once the footer comes into view
+          var seen = new IntersectionObserver(function (es) {
+            if (!es[0].isIntersecting) return;
+            seen.disconnect();
+            var t0 = null, dur = 1600;
+            var step = function (t) {
+              if (t0 === null) t0 = t;
+              var k = Math.min(1, (t - t0) / dur);
+              num.textContent = fmt(Math.round(total * (1 - Math.pow(1 - k, 3))));
+              if (k < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          });
+          seen.observe(counter);
+        })
+        .catch(function () { /* counter stays hidden */ });
+    }
+  }
+
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 })();

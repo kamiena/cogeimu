@@ -1164,3 +1164,57 @@ html[lang="en"] .contrast__what { font-family: var(--f-logo); font-size: 24px; l
 .work-hero__code { letter-spacing: 0.1em; }
 .work-hero__code span { margin: 0 0.12em; }
 @media (max-width: 760px) { .work-hero__code { letter-spacing: 0.08em; } }
+
+/* =========================================================
+   How to play: a stand-alone page reached from the QR code by the work
+   ========================================================= */
+.site-header--simple .lang-toggle { margin-left: auto; }
+.play-hero { position: relative; padding-top: 72px; }
+.play-hero__img {
+  display: block; width: min(100%, 720px); height: auto; aspect-ratio: 1200 / 986; margin: 0 auto; object-fit: cover;
+  -webkit-mask-image: linear-gradient(180deg, #000 68%, transparent 100%); mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
+}
+.play-hero__text { position: relative; margin-top: -56px; }
+.wrap.wrap--play { width: min(100% - var(--gutter) * 2, 760px); }
+.play-hero__work { margin: 0 0 10px; font-family: var(--f-type); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
+.play-hero__work span { color: var(--accent-hi); margin: 0 0.12em; }
+.play-hero__work b { color: #f1ede7; }
+.play-hero__title { margin: 0; font-family: var(--f-logo); font-weight: 400; font-size: clamp(46px, 9vw, 88px); line-height: 1; letter-spacing: 0.02em; color: var(--title-color, var(--text)); }
+.play-hero__name { margin: 12px 0 0; font-family: var(--f-type); font-weight: 700; font-size: 15px; letter-spacing: 0.08em; color: var(--text); }
+.play-hero__lead { margin-top: 24px; }
+
+.play-steps { border-top: 1px solid var(--line); }
+.play-steps > li { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.play-steps h2 { margin: 0 0 10px; font-family: var(--f-head); font-weight: 500; font-size: clamp(19px, 2.4vw, 22px); line-height: 1.6; letter-spacing: 0.06em; }
+html[lang="en"] .play-steps h2 { font-family: var(--f-logo); font-size: clamp(24px, 3vw, 28px); line-height: 1.3; letter-spacing: 0.01em; }
+.play-steps p { margin: 0; color: var(--text-2); }
+/* the voice choice matters most: it gets a frame of its own */
+.play-steps > li.play-steps__key {
+  margin: 14px 0; padding: 26px clamp(18px, 3vw, 28px); border: 1px solid rgba(200, 132, 91, 0.4);
+  background: linear-gradient(135deg, rgba(200, 132, 91, 0.1), rgba(200, 132, 91, 0.02));
+}
+.play-voice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.play-voice__side { padding: 16px 10px; text-align: center; background: var(--bg); border: 1px solid var(--line-strong); }
+.play-voice__how { display: block; font-size: 13px; letter-spacing: 0.04em; color: var(--text-2); }
+.play-voice__lang { display: block; margin-top: 6px; font-family: var(--f-head); font-size: 24px; letter-spacing: 0.06em; color: var(--text); }
+.play-voice__lang small { display: block; margin-top: 2px; font-family: var(--f-type); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.play-hashtag { margin: 14px 0 0 !important; font-family: var(--f-type); font-size: 20px; letter-spacing: 0.08em; color: var(--accent-hi) !important; }
+
+.play-links { display: grid; gap: 10px; margin-top: 8px; }
+@media (min-width: 640px) { .play-links { grid-template-columns: 1fr 1fr; } }
+.play-link { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 12px 16px 12px 12px; border: 1px solid var(--line); text-decoration: none; transition: border-color 0.3s; }
+.play-link img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.play-link small { display: block; font-family: var(--f-type); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.play-link > span:nth-child(2) > span { font-family: var(--f-head); font-size: 16px; letter-spacing: 0.06em; }
+.play-link__arrow { font-family: var(--f-type); color: var(--muted); transition: transform 0.4s var(--ease); }
+.play-link:hover { border-color: var(--accent); }
+.play-link:hover .play-link__arrow { transform: translateX(4px); color: var(--accent-hi); }
+
+/* visitor counter in the home footer (shown only once a count has loaded) */
+.site-footer__end { display: grid; justify-items: end; gap: 4px; }
+@media (max-width: 560px) { .site-footer__end { justify-items: start; } }
+.visit-counter { display: inline-flex; align-items: baseline; gap: 12px; margin: 0; }
+.visit-counter[hidden] { display: none; }
+.visit-counter__label { font-family: var(--f-type); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
+.visit-counter__num { font-family: var(--f-logo); font-size: 26px; letter-spacing: 0.04em; color: var(--text); font-variant-numeric: lining-nums tabular-nums; }
+.play-cta { margin: clamp(32px, 5vw, 48px) 0 0; }
