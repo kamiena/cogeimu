@@ -104,5 +104,5 @@ Hero → About the project（末尾に「CÔGEIMU についてもっと知る」
 
 - Positioning（ゲームはゲームのまま、工芸は工芸のまま、それぞれの強みを掛け合わせて現代アートの領域へ・限定性）と Next genre（その結果生まれる、ゲームの次のジャンル）は、トップには直接出さない。About の「もっと知る」ボタンから開くオーバーレイ（作品ページの Notes と同じ `.notes` の仕組み、`#more`）に、Positioning → Next genre の順でまとめる。
 - News：一般的なサイトのお知らせ欄と同じ形にする。トップには1件1行（日付・カテゴリ・タイトル）だけを新しい順に最新10件まで並べ、「ニュース一覧へ」で `news/`（全件の一覧）へ。各記事は `news/YYYY-MM-DD-名前.html` の独立したページで、ブログのように見出し・本文・写真（figure＋figcaption）を自由に繰り返せる。
-- ニュースを足すとき：(1) `news/2026-10-01-website.html` をコピーして記事を書く（title・description・og・canonical・JSON-LD の日付と見出しも直す）。(2) `news/index.html` の一覧の先頭に1行足す。(3) トップ（index.html）の一覧の先頭に1行足し、11件目を消す。(4) 前後の記事があれば `post-nav`（古い記事／新しい記事）を付ける。カテゴリは Info / Exhibition / Story。展示・出展の決定、3人の制作秘話、新情報などを載せる。ニュースは来場者へのお知らせなので です・ます調で書く。
+- ニュースを足すとき：(1) `news/2026-10-03-website.html` をコピーして記事を書く（title・description・og・canonical・JSON-LD の日付と見出しも直す）。(2) `news/index.html` の一覧の先頭に1行足す。(3) トップ（index.html）の一覧の先頭に1行足し、11件目を消す。(4) 前後の記事があれば `post-nav`（古い記事／新しい記事）を付ける。カテゴリは Info / Exhibition / Story。展示・出展の決定、3人の制作秘話、新情報などを載せる。ニュースは来場者へのお知らせなので です・ます調で書く。
 - Contact には、展示・出展、作品の購入、取材などの問い合わせ先であることを書く。
