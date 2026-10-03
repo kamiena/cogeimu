@@ -1312,3 +1312,7 @@ html[lang="en"] .post__body h2 { font-family: var(--f-logo); font-size: 24px; li
 
 /* home: organisers and grant, a band of their own before Contact */
 .section--partners .partners { margin-top: 0; }
+
+/* the reading of the project name, once, as ruby over the About heading */
+ruby.reading { ruby-align: center; }
+ruby.reading rt { ruby-align: center; font-family: var(--f-body); font-size: 0.3em; font-weight: 400; letter-spacing: 0.3em; color: var(--text-2); }
