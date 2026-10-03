@@ -464,6 +464,8 @@ a.logo-tile:hover { opacity: 0.85; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: end; }
 .site-footer .logo { font-size: 28px; color: var(--text); }
 .site-footer p { margin: 8px 0 0; }
+.site-footer__note { flex: 0 0 100%; padding-right: max(0px, 100% - 46em); font-size: 12px; line-height: 1.8; }
+.site-footer__note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 /* =========================================================
    Work pages
