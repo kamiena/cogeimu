@@ -36,6 +36,7 @@
 - 「これはゲームなのか？展3」には出展していない（SHIBUYA GAMES WEEK 2026 の会期中、近くに置いていただけ）。展示歴や作品ページに出展・参加として書かない。
 - 活動実績に数字のまとめ（〇件など）の枠は置かない。プレスは記事が実在すると確認できたものだけリンクを付ける。テレビ（NHK）とファミ通・美術手帖は大きなカードで目立たせ、動画（YouTube）と記事一覧を続ける。
 - **未発表情報**：02 Kagane の CV は発表まで「？？？」表記（名前をコード・コメント・コミットに書かない）。Anima Ludens（フランス・アルル）出展は、index.html と works/kagane.html に HTML コメントで用意済み。発表後にコメントを外して公開する。
+- Google Search Console に登録済み（URL プレフィックス `https://kamiena.github.io/cogeimu/`、確認はトップの `google-site-verification` メタタグ。消さない）。ページを足したら `sitemap.xml` にも足し、lastmod を更新する。
 - ファビコンはカガネの顔の写真（assets/img/common/favicon-32.png・favicon-192.png・apple-touch-icon.png）。
 - ページ遷移の特殊演出（目に入るズーム等）は使わない。通常の遷移（View Transitions のクロスフェード）のみ。
 
