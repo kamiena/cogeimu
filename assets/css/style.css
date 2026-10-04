@@ -1305,11 +1305,15 @@ html[lang="en"] .post__body h2 { font-family: var(--f-logo); font-size: 24px; li
 .post__body figure { margin: 2.4em 0; }
 .post__body figcaption { margin-top: 10px; font-size: 13px; line-height: 1.7; color: var(--muted); }
 .post__body a { color: var(--accent-hi); }
+.post__body .press, .post__body .facts { margin: 0 0 1.6em; }
+.post__body .press { border-top: 1px solid var(--line); }
+.post__body .press p { margin: -4px 0 16px; font-size: 14px; line-height: 1.8; color: var(--text-2); }
 .post__foot { margin-top: clamp(48px, 7vw, 80px); padding-top: 32px; border-top: 1px solid var(--line); display: grid; gap: 28px; justify-items: start; }
 .post-nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .post-nav a { text-decoration: none; }
 .post-nav small { display: block; font-family: var(--f-type); font-size: 12px; letter-spacing: 0.2em; color: var(--accent); }
 .post-nav__next { text-align: right; grid-column: 2; }
+.post-nav > a:only-child { grid-column: 1 / -1; }
 .news-page .sec-head { margin-bottom: 36px; }
 
 /* home: organisers and grant, a band of their own before Contact */
