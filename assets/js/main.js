@@ -16,6 +16,8 @@
     if (q === "ja" || q === "en") return q;
     var s = stored();
     if (s === "ja" || s === "en") return s;
+    // search engine robots browse in English; show them the Japanese page (the site's main language)
+    if (/bot|crawl|spider|slurp|Google-InspectionTool|Lighthouse/i.test(navigator.userAgent || "")) return "ja";
     return /^ja\b/i.test(navigator.language || "") ? "ja" : "en";
   }
   function setLang(lang) {

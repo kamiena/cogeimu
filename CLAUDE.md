@@ -36,6 +36,7 @@
 - 「これはゲームなのか？展3」には出展していない（SHIBUYA GAMES WEEK 2026 の会期中、近くに置いていただけ）。展示歴や作品ページに出展・参加として書かない。
 - 活動実績に数字のまとめ（〇件など）の枠は置かない。プレスは記事が実在すると確認できたものだけリンクを付ける。テレビ（NHK）とファミ通・美術手帖は大きなカードで目立たせ、動画（YouTube）と記事一覧を続ける。
 - **未発表情報**：02 Kagane の日本語 CV は発表まで「？？？」表記（名前をコード・コメント・コミットに書かない）。英語 CV（天城サリー／Sally Amaki）は 2026-10-05 20:00 に発表済み。Anima Ludens（フランス・アルル、2026.10.10–11.08）出展は 2026-10-04 に発表済み（ニュース記事 `news/2026-10-04-anima-ludens.html`、トップの活動実績、Kagane の「カガネに会える場所」に掲載）。
+- トップの title は「PRJ CÔGEIMU（コーゲイム）｜工芸とゲームを掛け合わせた、展示会でしか出会えないゲーム」。検索ロボットは英語設定で来るので、main.js でロボット（UA に bot/crawl/spider など）には日本語表示を見せる。
 - Google Search Console に登録済み（URL プレフィックス `https://kamiena.github.io/cogeimu/`、確認はトップの `google-site-verification` メタタグ。消さない）。ページを足したら `sitemap.xml` にも足し、lastmod を更新する。
 - ファビコンはカガネの顔の写真（assets/img/common/favicon-32.png・favicon-192.png・apple-touch-icon.png）。
 - ページ遷移の特殊演出（目に入るズーム等）は使わない。通常の遷移（View Transitions のクロスフェード）のみ。
@@ -107,7 +108,7 @@
 
 ## トップページの構成（順番）
 
-Hero → About the project（末尾に「CÔGEIMU についてもっと知る」ボタン）→ Works（各作品に CV 表記）→ Project members（制作メンバー → スーパーバイザー・コーディネーター・サポーター）→ News → Record（展示・メディア）→ 主催・助成ロゴ → Contact
+Hero → About the project（冒頭にキャッチコピー「イベントや展示会でしか出会えないゲーム」を作品ページの「作品“と”遊ぶ作品」と同じ扱いで置く。末尾に「CÔGEIMU についてもっと知る」ボタン）→ Works（各作品に CV 表記）→ Project members（制作メンバー → スーパーバイザー・コーディネーター・サポーター）→ News → Record（展示・メディア）→ 主催・助成ロゴ → Contact
 
 - Positioning（ゲームはゲームのまま、工芸は工芸のまま、それぞれの強みを掛け合わせて現代アートの領域へ・限定性）と Next genre（その結果生まれる、ゲームの次のジャンル）は、トップには直接出さない。About の「もっと知る」ボタンから開くオーバーレイ（作品ページの Notes と同じ `.notes` の仕組み、`#more`）に、Positioning → Next genre の順でまとめる。
 - News：一般的なサイトのお知らせ欄と同じ形にする。トップには1件1行（日付・カテゴリ・タイトル）だけを新しい順に最新10件まで並べ、「ニュース一覧へ」で `news/`（全件の一覧）へ。各記事は `news/YYYY-MM-DD-名前.html` の独立したページで、ブログのように見出し・本文・写真（figure＋figcaption）を自由に繰り返せる。
