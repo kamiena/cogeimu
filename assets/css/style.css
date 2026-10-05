@@ -626,6 +626,7 @@ html[lang="en"] .credit-list dd { letter-spacing: 0.02em; }
 html[lang="en"] .concept__theme { font-family: var(--f-logo); letter-spacing: 0.08em; }
 .concept__theme-label { font-family: var(--f-type); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
 .concept__text { margin: 30px auto 0; max-width: 40em; }
+.about-catch .concept__to { margin-top: 0; font-size: clamp(26px, 5.4vw, 64px); }
 
 @media (min-width: 900px) {
   .steps--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
