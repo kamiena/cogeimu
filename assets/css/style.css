@@ -1308,6 +1308,10 @@ html[lang="en"] .post__body h2 { font-family: var(--f-logo); font-size: 24px; li
 .post__body .press, .post__body .facts { margin: 0 0 1.6em; }
 .post__body .press { border-top: 1px solid var(--line); }
 .post__body .press p { margin: -4px 0 16px; font-size: 14px; line-height: 1.8; color: var(--text-2); }
+.post__links { display: grid; justify-items: start; gap: 12px; margin: 2em 0 0; }
+.post__body .post__links .btn { color: var(--text); text-align: left; }
+.post__body .post__links .btn:hover { color: var(--accent-hi); }
+@media (max-width: 560px) { .post__links { justify-items: stretch; } }
 .post__foot { margin-top: clamp(48px, 7vw, 80px); padding-top: 32px; border-top: 1px solid var(--line); display: grid; gap: 28px; justify-items: start; }
 .post-nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .post-nav a { text-decoration: none; }
