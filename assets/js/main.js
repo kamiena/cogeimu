@@ -80,16 +80,13 @@
   function setLang(lang) {
     root.lang = lang;
     loadFonts(lang);
-    document.querySelectorAll(".lang-toggle > button[data-lang]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
-    });
-    document.querySelectorAll(".lang-toggle__more").forEach(function (b) {
-      var on = MORE.indexOf(lang) >= 0;
-      b.classList.toggle("is-on", on);
-      b.querySelector(".lang-toggle__code").textContent = on ? LANGS[lang][b.closest(".lang-toggle--big") ? 1 : 0] : "";
-    });
-    document.querySelectorAll(".lang-menu button").forEach(function (b) {
-      b.setAttribute("aria-current", String(b.dataset.lang === lang));
+    document.querySelectorAll(".lang-toggle").forEach(function (box) {
+      var code = box.querySelector(".lang-toggle__code"), btn = box.querySelector(".lang-toggle__btn");
+      if (code) code.textContent = LANGS[lang][box.classList.contains("lang-toggle--big") ? 1 : 0];
+      if (btn) btn.setAttribute("aria-label", "Language: " + LANGS[lang][1]);
+      box.querySelectorAll(".lang-menu button").forEach(function (b) {
+        b.setAttribute("aria-current", String(b.dataset.lang === lang));
+      });
     });
     if (lang === "ja" || lang === "en" || dicts[lang]) { translate(); return; }
     translate(); // English for now
@@ -101,28 +98,16 @@
       .then(function () { root.classList.remove("i18n-wait"); });
   }
 
-  // the switch: JP and EN as before, then one more button that opens the other languages
-  var GLOBE = '<svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5"/><path d="M1.5 8h13M2.6 4.6h10.8M2.6 11.4h10.8"/></svg>';
+  // the switch: one button (globe + the current language) that opens the list of all nine.
+  // Pages carry the markup; one still holding the old JP / EN pair gets it built here.
+  var GLOBE = '<svg class="lang-toggle__globe" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5"/><path d="M1.5 8h13M2.6 4.6h10.8M2.6 11.4h10.8"/></svg>';
   document.querySelectorAll(".lang-toggle").forEach(function (box) {
-    var more = document.createElement("button");
-    more.type = "button";
-    more.className = "lang-toggle__more";
-    more.setAttribute("aria-label", "Other languages");
-    more.setAttribute("aria-expanded", "false");
-    more.innerHTML = GLOBE + '<span class="lang-toggle__code"></span>';
-    var menu = document.createElement("div");
-    menu.className = "lang-menu";
-    menu.hidden = true;
-    MORE.forEach(function (code) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.dataset.lang = code;
-      b.lang = code;
-      b.textContent = LANGS[code][1];
-      menu.appendChild(b);
-    });
-    box.appendChild(more);
-    box.appendChild(menu);
+    if (box.querySelector(".lang-toggle__btn")) return;
+    var html = '<button type="button" class="lang-toggle__btn" aria-haspopup="true" aria-expanded="false">' + GLOBE +
+      '<span class="lang-toggle__code"></span><span class="lang-toggle__caret" aria-hidden="true"></span></button><div class="lang-menu" hidden>';
+    Object.keys(LANGS).forEach(function (code) { html += '<button type="button" data-lang="' + code + '">' + LANGS[code][1] + "</button>"; });
+    box.removeAttribute("role");
+    box.innerHTML = html + "</div>";
   });
   function closeMenus(except) {
     document.querySelectorAll(".lang-menu").forEach(function (m) {
@@ -139,23 +124,26 @@
   }
   setLang(first);
   document.addEventListener("click", function (e) {
-    var more = e.target.closest(".lang-toggle__more");
-    if (more) {
-      var m = more.nextElementSibling;
+    var btn = e.target.closest(".lang-toggle__btn");
+    if (btn) {
+      var m = btn.nextElementSibling;
       closeMenus(m);
       m.hidden = !m.hidden;
-      more.setAttribute("aria-expanded", String(!m.hidden));
+      btn.setAttribute("aria-expanded", String(!m.hidden));
       return;
     }
-    var b = e.target.closest(".lang-toggle button[data-lang]");
-    if (!e.target.closest(".lang-menu")) closeMenus();
-    if (!b) return;
+    var b = e.target.closest(".lang-menu button[data-lang]");
     closeMenus();
+    if (!b) return;
     setLang(b.dataset.lang);
     store(b.dataset.lang);
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenus();
+    if (e.key !== "Escape") return;
+    var open = document.querySelector(".lang-menu:not([hidden])");
+    if (!open) return;
+    closeMenus();
+    open.previousElementSibling.focus();
   });
 
   // ---- header / menu ----------------------------------------------------
