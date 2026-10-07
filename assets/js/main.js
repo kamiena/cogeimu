@@ -273,6 +273,24 @@
     }
   }
 
+  // ---- scheduled entrances: a news row (or post-nav link) written as
+  // <li hidden data-reveal="2026-10-08T19:50:00+09:00"> stays hidden until that moment,
+  // then appears by itself (also on a page that is already open)
+  var timed = document.querySelectorAll("[data-reveal]");
+  if (timed.length) {
+    var showDue = function () {
+      var now = Date.now(), waiting = 0;
+      timed.forEach(function (el) {
+        var t = Date.parse(el.getAttribute("data-reveal"));
+        if (!isNaN(t) && now >= t) { el.hidden = false; } else { waiting++; }
+      });
+      return waiting;
+    };
+    if (showDue()) {
+      var tick = setInterval(function () { if (!showDue()) clearInterval(tick); }, 20000);
+    }
+  }
+
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 })();
