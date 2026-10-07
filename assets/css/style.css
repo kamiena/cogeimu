@@ -1333,6 +1333,8 @@ html[lang="en"] .post__body .qa-q { font-family: var(--f-logo); font-size: 21px;
 .post-nav small { display: block; font-family: var(--f-type); font-size: 12px; letter-spacing: 0.2em; color: var(--accent); }
 .post-nav__next { text-align: right; grid-column: 2; }
 .post-nav > a:only-child { grid-column: 1 / -1; }
+/* in the half-width older / newer links the series name may wrap (kept on one line it pushes the page sideways on a phone) */
+.post-nav .post-series { white-space: normal; }
 .news-page .sec-head { margin-bottom: 36px; }
 
 /* home: organisers and grant, a band of their own before Contact */
