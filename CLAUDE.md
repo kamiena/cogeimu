@@ -114,3 +114,7 @@ Hero → About the project（冒頭にキャッチコピー「イベントや展
 - News：一般的なサイトのお知らせ欄と同じ形にする。トップには1件1行（日付・カテゴリ・タイトル）だけを新しい順に最新10件まで並べ、「ニュース一覧へ」で `news/`（全件の一覧）へ。各記事は `news/YYYY-MM-DD-名前.html` の独立したページで、ブログのように見出し・本文・写真（figure＋figcaption）を自由に繰り返せる。
 - ニュースを足すとき：(1) `news/2026-10-03-website.html` をコピーして記事を書く（title・description・og・canonical・JSON-LD の日付と見出しも直す）。(2) `news/index.html` の一覧の先頭に1行足す。(3) トップ（index.html）の一覧の先頭に1行足し、11件目を消す。(4) 前後の記事があれば `post-nav`（古い記事／新しい記事）を付ける。カテゴリは Info / Exhibition / Story。展示・出展の決定、3人の制作秘話、新情報などを載せる。ニュースは来場者へのお知らせなので です・ます調で書く。
 - Contact には、展示・出展、作品の購入、取材などの問い合わせ先であることを書く。
+- **時刻指定の公開（予約記事）**：記事ページは先に公開し、入口だけ時刻で出す（main.js の `data-reveal`）。
+  - 記事のファイル名は `news/YYYY-MM-DD-名前-ランダム6文字.html`（推測されない URL）。公開前は `<head>` に `<meta name="robots" content="noindex">` を入れ、sitemap には入れない。
+  - トップと `news/index.html` の行、前の記事の post-nav「新しい記事」リンクに `hidden data-reveal="YYYY-MM-DDTHH:MM:00+09:00"`（公開時刻の10分前、日本時間）を付ける。時刻を過ぎると、見ている人の画面で自動的に表示される（開きっぱなしでも20秒ごとに確認）。
+  - 公開後の片付け（時刻に縛られない）：記事の noindex を外す、`hidden data-reveal` を消す、sitemap に追加。
