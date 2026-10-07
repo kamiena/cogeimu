@@ -29,9 +29,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime:wght@400;700&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20261008b">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20261008c">
   <script src="../assets/js/budoux-ja.js" defer></script>
-  <script src="../assets/js/main.js?v=20261008" defer></script>
+  <script src="../assets/js/main.js?v=20261008b" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -66,9 +66,19 @@
       <li><a href="../news/">News</a></li>
       <li><a href="../#contact">Contact</a></li>
     </ul>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="ja" aria-pressed="true">JP</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <div class="lang-toggle">
+      <button type="button" class="lang-toggle__btn" aria-haspopup="true" aria-expanded="false" aria-label="Language: 日本語"><svg class="lang-toggle__globe" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5"/><path d="M1.5 8h13M2.6 4.6h10.8M2.6 11.4h10.8"/></svg><span class="lang-toggle__code">JP</span><span class="lang-toggle__caret" aria-hidden="true"></span></button>
+      <div class="lang-menu" hidden>
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="fr">Français</button>
+        <button type="button" data-lang="it">Italiano</button>
+        <button type="button" data-lang="es">Español</button>
+        <button type="button" data-lang="de">Deutsch</button>
+        <button type="button" data-lang="ko">한국어</button>
+        <button type="button" data-lang="zh-Hans">简体中文</button>
+        <button type="button" data-lang="zh-Hant">繁體中文</button>
+      </div>
     </div>
     <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </nav>
