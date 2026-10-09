@@ -675,15 +675,16 @@ html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .concep
 .catch-band__bg {
   position: absolute; inset: 0; z-index: -1;
   background-size: cover; background-position: 50% 35%;
-  opacity: 0.32; filter: grayscale(0.3);
+  opacity: 0.22; filter: grayscale(0.3);
   -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 100%);
   mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 100%);
 }
 .catch-band__inner::before { content: ""; display: block; width: 40px; height: 1px; margin: 0 auto 28px; background: var(--accent); }
-.catch-band__text { margin: 0; font-family: var(--f-head); font-weight: 400; font-size: min(26px, 6.6vw); line-height: 1.75; letter-spacing: 0.16em; color: var(--text); }
-html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .catch-band__text { font-family: var(--f-logo); font-size: clamp(30px, 7.4vw, 60px); line-height: 1.25; letter-spacing: 0.02em; max-width: 13em; margin-inline: auto; }
+/* phones: one size up, the tracking a little narrower so “イベントや展示会でしか” still fits on one line down to 360px */
+.catch-band__text { margin: 0; font-family: var(--f-head); font-weight: 400; font-size: min(29px, 7.4vw); line-height: 1.7; letter-spacing: 0.1em; color: var(--text); }
+html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .catch-band__text { font-family: var(--f-logo); font-size: clamp(34px, 8.6vw, 72px); line-height: 1.2; letter-spacing: 0.02em; max-width: 13em; margin-inline: auto; }
 @media (min-width: 900px) {
-  .catch-band__text { font-size: clamp(34px, 3.6vw, 52px); letter-spacing: 0.18em; }
+  .catch-band__text { font-size: clamp(40px, 4.4vw, 62px); letter-spacing: 0.16em; }
 }
 
 @media (min-width: 900px) {
