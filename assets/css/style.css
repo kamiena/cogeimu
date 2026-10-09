@@ -1255,6 +1255,7 @@ html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .play-s
 /* Kagane notes: the three countdown interviews, one card each (one column, or three side by side; never two plus one) */
 .play-links.interview-links { margin-top: clamp(24px, 4vw, 36px); grid-template-columns: 1fr; }
 @media (min-width: 900px) { .play-links.interview-links { grid-template-columns: repeat(3, 1fr); } }
+.play-link > span:nth-child(2) > .play-link__role { display: block; margin-top: 2px; font-family: var(--f-body); font-size: 13px; letter-spacing: 0.04em; color: var(--text-2); }
 /* a part of the credits, not a section of its own: the label is white like the credit headings, with their rule below */
 .cast-news__label {
   margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
