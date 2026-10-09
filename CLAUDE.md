@@ -56,7 +56,7 @@
 1ページに情報を詰め込まない（参考：チームラボ、落合陽一、null² の作品ページ）。
 
 - **1ページ目**：ヒーロー（キービジュアル）→ 作品キャプション → Concept → （Trailer：動画がある作品）→ Statement → Spec → Notes（2階層目への入口の一覧）→ Credits → 次の作品。画像が少なくならないよう、各節に写真を置く。
-- **2階層目（Notes）**：Kagane は Sculpture / Interface / Gameplay / World & Sound / Pranks / Character / Process / Interview（CÔGEIMU CREATOR COUNTDOWN の3本のインタビュー記事へのリンク）、Yuki は Gameplay / Emotion / Character / Contrast / Story / Process / Exhibitions などの詳細。1ページ目の一覧から開くオーバーレイ（`.notes` と `.notes__item`、開閉は main.js）。URL は `#sculpture` などで直接開ける。JS がない環境ではページ末尾に普通の節として並ぶ。
+- **2階層目（Notes）**：Kagane は Sculpture / Interface / Gameplay / World & Sound / Pranks / Character / Process / Interview（「カガネをつくった人たちに聞いた」。CÔGEIMU CREATOR COUNTDOWN の3本のインタビュー記事へのリンクに、名前と役職）、Yuki は Gameplay / Emotion / Character / Contrast / Story / Process / Exhibitions などの詳細。1ページ目の一覧から開くオーバーレイ（`.notes` と `.notes__item`、開閉は main.js）。URL は `#sculpture` などで直接開ける。JS がない環境ではページ末尾に普通の節として並ぶ。
 - 1ページ目の定番の節（Concept / Trailer / Statement / Spec / Notes / Credits）は英語の節名だけにし、日本語の見出しを別に作らない。節名は `sec-head__label--title`（大きめの英字見出し）で表示する。
 - 節名の文字色は、横の線と同じ色にそろえる（Kagane は銅のオレンジ、Yuki は水色＝各テーマの `--accent`）。
 - Concept の各画像の下には英語ラベル（Sculpture / Game / Touch など）を付けず、日本語の見出しと本文だけにする。画像の縁はぼかす（`.steps__img` のマスク）。インゲーム画像が鮮やかすぎるときは `.steps__img--dim` で少し暗くする。
