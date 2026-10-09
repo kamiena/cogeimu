@@ -1250,6 +1250,8 @@ html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .play-s
 .play-link__arrow { font-family: var(--f-type); color: var(--muted); transition: transform 0.4s var(--ease); }
 .play-link:hover { border-color: var(--accent); }
 .play-link:hover .play-link__arrow { transform: translateX(4px); color: var(--accent-hi); }
+/* Kagane credits: the cast announcements as small news links (same cards as the how-to-play page) */
+.cast-news { margin-top: clamp(40px, 6vw, 64px); }
 
 /* visitor counter in the home footer (shown only once a count has loaded) */
 .site-footer__end { display: grid; justify-items: end; gap: 4px; }
