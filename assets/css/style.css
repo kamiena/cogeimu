@@ -1252,6 +1252,9 @@ html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .play-s
 .play-link:hover .play-link__arrow { transform: translateX(4px); color: var(--accent-hi); }
 /* Kagane credits: the cast announcements as small news links (same cards as the how-to-play page) */
 .cast-news { margin-top: clamp(36px, 5vw, 48px); }
+/* Kagane notes: the three countdown interviews, one card each (one column, or three side by side; never two plus one) */
+.play-links.interview-links { margin-top: clamp(24px, 4vw, 36px); grid-template-columns: 1fr; }
+@media (min-width: 900px) { .play-links.interview-links { grid-template-columns: repeat(3, 1fr); } }
 /* a part of the credits, not a section of its own: the label is white like the credit headings, with their rule below */
 .cast-news__label {
   margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
