@@ -1251,7 +1251,12 @@ html:is([lang="en"], [lang="fr"], [lang="it"], [lang="es"], [lang="de"]) .play-s
 .play-link:hover { border-color: var(--accent); }
 .play-link:hover .play-link__arrow { transform: translateX(4px); color: var(--accent-hi); }
 /* Kagane credits: the cast announcements as small news links (same cards as the how-to-play page) */
-.cast-news { margin-top: clamp(40px, 6vw, 64px); }
+.cast-news { margin-top: clamp(36px, 5vw, 48px); }
+/* a part of the credits, not a section of its own: the label is white like the credit headings, with their rule below */
+.cast-news__label {
+  margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  font-family: var(--f-type); font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text);
+}
 
 /* visitor counter in the home footer (shown only once a count has loaded) */
 .site-footer__end { display: grid; justify-items: end; gap: 4px; }
